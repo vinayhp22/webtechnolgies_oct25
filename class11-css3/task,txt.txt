@@ -1,0 +1,12 @@
+Task: Build a Profile Page:
+1. Reset all margins and paddings to 0 using *
+    {
+        margin: 0;
+        padding: 0;
+    }
+2. Give all <p> tags a font-size & color - using type selector
+3. Create a .highlight class that makes text bold and yellow. Apply this to <p>
+4. Give #profile background color for body
+5. Style h1, h2, h3 to have the same font-family and color
+6. In Your profile <div>, make all <span> inside <p> red.
+7. Style all <input type="text"> with border-radius.

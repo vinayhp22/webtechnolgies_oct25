@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .shape1 {
+            border: 10px solid red;
+            border-radius: 10px;
+        }
+        .shape2 {
+            border: 10px solid red;
+            border-radius: 50%;
+            width: 300px;
+            height: 300px;
+        }
+        .shape3 {
+            border-end-end-radius: 50px;
+            height: 200px;
+            border: 10px solid green;
+        }
+        .shape4 {
+            border-start-end-radius: 50px;
+            height: 200px;
+            border: 10px solid green;
+        }
+        .shape5 {
+            border-end-start-radius: 50px;
+            height: 200px;
+            border: 10px solid green;
+        }
+        .shape6 {
+            border-start-start-radius: 50px;
+            height: 200px;
+            border: 10px solid green;
+        }
+    </style>
+</head>
+<body>
+    <h1>Border radius</h1>
+    <p>Rounds the corner of an element(a box)</p>
+    <p>Can create circles if element is square and border-radius: 50%</p>
+    
+    <div class="shape1">Border Radius 10px</div>
+    <div class="shape2">Circle: Border Radius 50% with same height & width</div>
+    <div class="shape3">End to end border raduius(bottom-left corner)</div>
+    <div class="shape4">Start to end border raduius(top-left corner)
+        vertical(Start) - top
+        horizontal(end) - left
+    </div>
+    <div class="shape5">end to start border raduius(bottom-right corner)
+        vertical(end) - bottom
+        horizontal(start) - right
+    </div>
+    <div class="shape6">start to start border raduius(top-right corner)
+        vertical(start) - top
+        horizontal(start) - right
+    </div>
+</body>
+</html>

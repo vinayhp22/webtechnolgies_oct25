@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Letter Spacing</title>
+    <style>
+        .positive{
+            letter-spacing: 12px;
+        }
+        .negative {
+            letter-spacing: -1px;
+        }
+        .div1{
+            font-size: 20px;
+        }
+        .p1 {
+            letter-spacing: 2%;
+        }
+        .p2 {
+            letter-spacing: 2em;
+        }
+        .p3 {
+            letter-spacing: 2rem;
+        }
+        </style>
+</head>
+<body>
+    <h1>Text properties: 4. letter-spacing</h1>
+    <p>Adds or reduces spacing between the letters of the element.</p>
+    <p>Supported Units: px, em, rem</p>
+    <p>% not supports in the letter-spacing..</p>
+    <p>Instead of % use em in letter-spacing...</p>
+    10% -> 0.1em
+    100% -> 1em
+
+    <p class="positive">This is p tag with 12px letter spacing</p>
+    <p class="negative">This is p tag with -1px letter spacing - letters are overlapped..</p>
+
+    <div class="div1">
+        <p class="p1">This is 200% p tag</p>
+        <p class="p2">This is 2em p tag - 40px</p>
+        <p class="p3">This is 2rem p tag - 32px</p>
+
+    </div>
+    
+</body>
+</html>

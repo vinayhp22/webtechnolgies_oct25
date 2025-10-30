@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box {
+            position: relative;
+            width: 150px;
+            height: 100px;
+            margin: 10px;
+            color: white;
+            text-align: center;
+            line-height: 100px;
+            font-weight: bold;
+        }
+        .left {
+            float: left;
+            background: orange;
+        }
+        .right {
+            float: right;
+            background: green;
+        }
+        .clear {
+            clear: both;
+        }
+    </style>
+</head>
+<body>
+    <h2>Float Example</h2>
+    
+    <div class="box left">Left Float</div>
+    
+    <div class="box right">Right Float</div>
+    <p>You can see this is coming between the box</p>
+    <p class="clear">But this one is coming in the next line like block display property.</p>
+    <h2>Clear Example</h2>
+
+
+</body>
+</html>

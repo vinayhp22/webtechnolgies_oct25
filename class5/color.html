@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML COLORS</title>
+</head>
+<body>
+    <h1>HTML COLORS</h1>
+
+    <h3>Ways to define colors in HTML</h3>
+    <h4>1. By Name - <q>HTML supports 140 standard colors</q></h4>
+    <p style="color: red;">This is red text</p>
+    <p style="background-color: lightblue;">This has a light blue background-color</p>
+
+    <h4>2. Hexadecimal(HEX) - most used in the industry</h4>
+    <p><q>Allowed characters/digits: 0-9, A-F/a-f</q></p>
+    <p><q>Uses a #RRGGBB format where each pair is a value from 00 to FF/ff</q></p>
+    <p style="color: #ff0000;">This is red text (#ff0000)</p>
+    <p style="color: #00ff00;">This is green text (#00ff00)</p>
+    <p style="color: #0000ff;">This is Blue text (#0000ff)</p>
+    <p style="color: #000000;">This is Black text (#000000)</p>
+    <p style="color: #ffffff; background-color: #000000;">This is White text (#000000)</p>
+    <p style="color: #ff6600;"></p>
+    
+    <h4>3. RGB</h4>
+    <p><q>Stands for Red, Green, Blue. Values from 0 to 255</q></p>
+    <p style="color: rgb(255, 0, 0);">This is red text (rgb(255, 0, 0))</p>
+    <p style="color: rgb(0, 255, 0);">This is green text (rgb(0, 255, 0))</p>
+    <p style="color: rgb(0, 0, 255);">This is blue text (rgb(0, 0, 255))</p>
+    <p style="color: rgb(0, 0, 0);">This is black text (rgb(0, 0, 0))</p>
+    <p style="color: rgb(255, 255, 255); background-color: rgb(0, 0, 0);">This is white text (rgb(255, 255, 255))</p>
+
+    <h4>4. RGBA</h4>
+    <p><q>Same as RGB, but with alpha transaparency(0.0 -> fully transparent, 1.0 -> fully opaque)</q></p>
+    <p style="color: rgba(255, 0, 0, 0.0);">This is blank text (rgba(255, 0, 0, 0.0))</p>
+    <p style="color: rgba(255, 0, 0, 1.0);">This is red text (rgba(255, 0, 0, 1.0))</p>
+    <p style="color: rgba(255, 0, 0, 0.5);">This is brown text(semi-transparent red text) (rgba(255, 0, 0, 0.5))</p>
+
+    <h5>5. HSL</h5>
+    <p><q>Hue, Saturation, Lightness</q></p>
+    <p><q>Hue = degree(0-360)</q></p>
+    <p><q>Saturation = percentage of color intensity</q></p>
+    <p><q>Lightness = percentage of brightness</q></p>
+
+    <p style="color: hsl(120, 100%, 59%);">This is pure green</p>
+    <p style="color: hsl(120, 0%, 50%);">This is pure green</p>
+    <p style="color: hsl(120, 50%, 59%);">This is pure green</p>
+
+    <h5>6. HSLA</h5>
+    <p><q>Same as HSL, but with alpha transaparency</q></p>
+
+    <p style="color: hsla(240, 100%, 50%, 0.3);">This is semi-transparent blue text</p>
+</body>
+</html>

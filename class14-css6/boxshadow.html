@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Box Shadow</title>
+    <style>
+        .box {
+            width: 300px;
+            height: 150px;
+            border: 5px solid red;
+            box-shadow: 5px 5px 10px grey;
+        }
+        .box1 {
+            width: 300px;
+            height: 150px;
+            border: 5px solid red;
+            box-shadow: -5px -5px 10px gray;
+        }
+        .box2 {
+            width: 300px;
+            height: 150px;
+            box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.5);
+        }
+        .box3{
+            width: 300px;
+            height: 150px;
+            box-shadow: inset 5px 5px 15px rgba(0, 0, 0, 0.5);
+        }
+        .box4{
+            width: 300px;
+            height: 150px;
+            box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.5),
+            15px 15px 15px red,
+            25px 25px 15px green;
+        }
+        .box5{
+            width: 300px;
+            height: 150px;
+            box-shadow: 5px 5px 50px 50px rgba(0, 0, 0, 0.5);
+        }
+        .box6{
+            width: 300px;
+            height: 150px;
+            box-shadow: 50px 50px 50px 5px rgba(0, 0, 0, 0.5);
+        }
+    </style>
+</head>
+<body>
+    <h1>Box Shadow</h1>
+    <p>Adds shadow effect around an element</p>
+    <p>Can add multiple shadows by comma-separating values</p>
+    <p>If a negative offset-x - then shadow effect moves to left</p>
+    <p>If a negative offset-y - then shadow effect moves to top</p>
+    <h4>Syntax: </h4>
+    <p>box-shadow: offset-x offset-y blur-radius spread-radius color</p>
+    <div class="box">Basic Shadow</div>
+    <br><br>
+    <div class="box1">reverse Shadow</div>
+    <br><br>
+    <div class="box2">Glowing Effect</div>
+    <br><br>
+    <div class="box3">Inner Shadow</div>
+    <br><br>
+    <div class="box4">Multiple Shadows seperated by commas</div>
+
+    <br><br>
+    <div class="box5">Box 5
+        blur-radius = 50px
+        spread-radius = 50px
+    </div>
+        <br><br>
+    <div class="box6">Box 6
+        blur-radius = 50px
+        spread-radius = 5px
+    </div>
+    <br> <br>
+
+</body>
+</html>

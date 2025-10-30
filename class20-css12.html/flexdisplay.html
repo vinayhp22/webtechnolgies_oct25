@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flex</title>
+    <style>
+        .container {
+            display: flex;
+            /* Horizontal alignement - left or right */
+            /* try flex-start, flex-end, space-between, space-around */
+            justify-content: center; 
+            /* Vertical alignements - top or bottom */
+            /* try flex-start, flex-end,*/
+            align-items: center;
+            /* row (default ) or columns */
+            /* try row-reverse, column-reverse*/
+            flex-direction: row;             
+        }
+        .box {
+            width: 100px; height: 100px;
+            background: palegreen;
+            color: black;
+            text-align: center;
+            line-height: 100px;
+            font-weight: bold;
+        }
+        .container1{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .container2{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 500px;
+        }
+        .container3{
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            height: 500px;
+        }
+        .container4{
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+        .container5 {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+        .images {
+            height: 300px;
+            width: 300px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Flexbox - Flexible Box Layout</h1>
+    <h2>Iteams aligned centre with flex flex-direction column</h2>
+    <div class="container">
+        <div class="box">1</div>
+        <div class="box">2</div>
+        <div class="box">3</div>
+        <div class="box">4</div>
+        <img class="images" src="img1.jpg" alt="img4">
+    </div>
+    <h2>Iteams aligned centre with flex flex-direction row</h2>
+     <div class="container1">
+        <div class="box">1</div>
+        <div class="box">2</div>
+        <div class="box">3</div>
+        <div class="box">4</div>
+    </div>
+    <h2>Iteams aligned centre with flex flex-direction row and space-between</h2>
+     <div class="container2">
+        <div class="box">1</div>
+        <div class="box">2</div>
+        <div class="box">3</div>
+        <div class="box">4</div>
+    </div>
+     <h2>Iteams aligned centre with flex flex-direction row and space-around</h2>
+     <div class="container3">
+        <div class="box">1</div>
+        <div class="box">2</div>
+        <div class="box">3</div>
+        <div class="box">4</div>
+    </div>
+ <h2>Iteams with flex - wrap</h2>
+     <div class="container4">
+        <div class="box">1</div>
+        <div class="box">2</div>
+        <div class="box">3</div>
+        <div class="box">4</div>
+    </div>
+    <div class="container5">
+        <img class="images" src="download.jpg" alt="img1">
+        <img class="images" src="im.webp" alt="img2">
+        <img class="images" src="images.jpg" alt="img3">
+        <img class="images" src="img1.jpg" alt="img4">
+    </div>
+    <div style="height: 500px;"></div>
+
+</body>
+</html>

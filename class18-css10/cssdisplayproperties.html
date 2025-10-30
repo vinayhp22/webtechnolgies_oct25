@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .block {
+            display: block;
+            background: lightblue;
+            margin: 5px 0;
+            padding: 10px;
+            width: 120px;
+            height: 50px;
+        }
+        .inline {
+            display: inline;
+            background: red;
+            padding: 5px 0;
+            margin: 10px;
+            width: 120px;
+            height: 50px;
+        } 
+        .inlineblock {
+            display: inline-block;
+            background: green;
+            padding: 5px 0;
+            margin: 10px;
+            width: 120px;
+            height: 50px;
+            text-align: center;
+        } 
+
+        .none {
+            display: none;
+            background: burlywood;
+            padding: 5px 0;
+            margin: 10px;
+        }
+        .visibility {
+            visibility: hidden;
+            background: burlywood;
+            padding: 5px 0;
+            margin: 10px;
+        }
+        .box {
+            background: burlywood;
+            padding: 5px 0;
+            margin: 10px;
+        } 
+    </style>
+</head>
+<body>
+    <h1>CSS Display Properties</h1>
+    <h2>1. block</h2>
+        <p>ex: div, p, h1-h6</p>
+        <a class="block">
+            box 1
+        </a>
+        <a class="block">
+            box 2
+        </a>
+        <p>Even though it is achor tag its working like div tag because display: block</p>
+
+    <h2>2. inline</h2>
+    <p>Ex: a, span</p>
+    <p class="inline">box 1</p>
+    <p class="inline">box 2</p>
+    <p>Even though it is p tag its working like a or span tag because display: inline</p>
+
+    <h2>3. inline-block</h2>
+    <p>This behaves like inline but it also takes height & width.</p>
+    <p>Where for block we can provide height & width but not for inline</p>
+    <p class="inlineblock">box 1</p>
+    <p class="inlineblock">box 2</p>
+
+    <h2>4. none</h2>
+    <p>This will not show the elements on the web page, and also not occupy the space..</p>
+    <div class="none"> box 1 </div>
+    <div class="none"> box 2 </div>
+    
+
+
+    <h2>display: none; vd visibility:hidden;</h2>
+    
+    <div class="none">This is completely removed from the layout</div>
+    <div class="box">This is visible - see there no space above</div>
+    <div class="visibility">This is invisible but still occupy space </div>
+    <div class="box">This is visible - see there a space above</div>
+
+    <p>display: none -> element is removed from the layout(no-space).</p>
+    <p>visibility: hidden -> element is invisible but still takes space.</p>
+</body>
+</html>

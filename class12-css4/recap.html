@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* Adjacent Sibiling selector */
+        h1 + p {
+            color: green;
+        }
+        /* general Sibling selector */
+        h1 ~ span {
+            color: red;
+        }
+        /* attribute selector */
+        input[type="text"]{
+            background-color: yellow;
+        }
+        /* Psuedo class selector */
+        p:first-child {
+            color: turquoise;
+        }
+        b:first-child {
+            font-size: large;
+            color: chartreuse;
+        }
+        /* Psuedo element Selector */
+        p::first-letter{
+            color:violet;
+        }
+        
+        .pixel {
+            font-size: 20px;
+        }
+        .percentage {
+            font-size: 20%; 
+        }
+        .parent {
+            font-size: 100px;
+        }
+        .child {
+            font-size: 0.5em;
+        }
+        .ptag {
+            font-size: 3rem;
+        }
+        .view{
+            font-size: 20vw;
+            font-size: 10vh;
+        }
+    </style>
+</head>
+<body>
+    CSS - controls how HTML page looks, not the structure of the HTML page.
+
+    Syntax:
+    Selector {
+        property: value;
+    }
+    Basic Selectors: 
+    1. Universal selector(*)
+    2. type selector(tag/element)
+    3. Class selector(.classname)
+    4. id selector(#idname)
+    5. Group Selector(,)
+
+    Selectors - Combinators
+    6. Descendent Selector(space) - general 
+    7. Child Selector(>) - immediate child
+    8. Adjacent Sibiling selector (+) - immediate matching sibling 
+    <h1>This is h1 tag</h1>
+    <p>This is a p tag</p>
+    <span>This is a span tag</span>
+    9. general Sibling selector (~) - general
+
+    Advanced Selectors
+    10. attribute selector(tag[attribute=value])
+    <input type="text" >
+
+    11. Psuedo class selector(:)
+    <div><p>This is the first child</p></div>
+    <p><b>This </b> is p tag</p>
+    12. Psuedo element Selector(::)
+    <p>This is the example for Psuedo class selector</p>
+    
+    CSS Units
+    1. Absolute Units - fixed
+        * px (pixel)
+        <p class="pixel">This ia a px example</p>
+
+    2. Relative Units
+        * %  - based on the parent 
+        <div class="parent">
+            <p class="percentage">This is % example</p>
+        </div>
+        
+        * em - based on the parent (times)
+        <div class="parent">
+            <p class="child">This is em example</p>
+        </div>
+            1em = 100%
+            2em = 200%
+        * rem - based on the root tag
+            by default font-size of html tag = 16px
+            <p class="ptag">This is rem example</p>
+        * viewport - vh & vw => responsive
+
+        <p class="view">This is viewport example</p>
+
+
+</body>
+</html>

@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .bgimg {
+            background-image: url(image.jpg);
+            height: 500px;
+            width: 500px;
+            background-repeat: no-repeat;
+            background-size: cover;
+            display: flex;
+            flex-direction: column;
+            /* horizontal center */
+            justify-content: center; 
+            /* vertical center */
+            align-items: center;
+            color: white;
+        }
+        .repeat {
+            background-image: url(image.jpg);
+            height: 500px;
+            background-repeat: repeat;
+        }
+        .repeatx {
+            background-image: url(image.jpg);
+            height: 500px;
+            background-repeat: repeat-x;
+        }
+        .repeaty {
+            background-image: url(image.jpg);
+            height: 500px;
+            background-repeat: repeat-y;
+        }
+        .norepeat {
+            background-image: url(image.jpg);
+            height: 500px;
+            background-repeat: no-repeat;
+        }
+        .fullsize {
+            background-image: url(image.jpg);
+            height: 500px;
+            width: 500px;
+            background-size: 100%;
+        }
+        .coversize {
+            background-image: url(image.jpg);
+            height: 148px;
+            background-size: cover;
+        }
+        .containsize {
+            background-image: url(image.jpg);
+            height: 148px;
+            background-size: contain;
+            background-repeat: no-repeat;
+        }
+        .autosize {
+            background-image: url(image.jpg);
+            height: 148px;
+            background-size: auto;
+            background-repeat: no-repeat;
+        }
+        .centerposition {
+            background-image: url(image.jpg);
+            height: 500px;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+        .topposition {
+            background-image: url(image.jpg);
+            height: 500px;
+            background-position: top;
+            background-repeat: no-repeat;
+        }
+        .leftposition {
+            background-image: url(image.jpg);
+            height: 500px;
+            background-position: left;
+            background-repeat: no-repeat;
+        }
+        .topleftposition {
+            background-image: url(image.jpg);
+            height: 500px;
+            background-position: top left;
+            background-repeat: no-repeat;
+        }
+        .bottomrightposition {
+            background-image: url(image.jpg);
+            height: 500px;
+            background-position: bottom right;
+            background-repeat: no-repeat;
+        }
+    </style>
+</head>
+<body>
+    <h1>Background Properties - 2. background-image</h1>
+    <div class="bgimg">
+        <p>This is p tag inside div tag </p>
+        <p>You can see background-image there...</p>
+        <p>Also it is center both horizontally and vertically</p>
+    </div>
+
+    <h1>Background Properties - 3. background-repeat</h1>
+    <div class="repeat">
+        <p>This is p tag inside div tag </p>
+        <p>You can see background-image there...</p>
+        <p>Also images are repeatings</p>
+    </div>
+    <br>
+    <div class="repeatx">
+        <p>This is p tag inside div tag </p>
+        <p>You can see background-image there...</p>
+        <p>Also images are repeatings horizontally</p>
+    </div>
+    <br>
+    <div class="repeaty">
+        <p>This is p tag inside div tag </p>
+        <p>You can see background-image there...</p>
+        <p>Also images are repeatings vertically</p>
+    </div>
+    <br>
+    <div class="norepeat">
+        <p>This is p tag inside div tag </p>
+        <p>You can see background-image there...</p>
+        <p>Also images are not repeatings but its also not covered whole element</p>
+    </div>
+
+    <h1>Background Properties - 4. background-size</h1>
+    <div class="fullsize">
+        <p>This is p tag inside div tag </p>
+        <p>You can see background-image there...</p>
+        <p>Also images are repeatings and its covered whole element</p>
+    </div>
+    <br>
+    <div class="coversize">
+        <p>This is p tag inside div tag </p>
+        <p>You can see background-image there...</p>
+        <p>Also images are repeatings and its covered whole element</p>
+        <p>In Cover, bg-img width will change based on screen/element's width</p>
+    </div>
+    <br>
+    <div class="containsize">
+        <p>This is p tag inside div tag </p>
+        <p>You can see background-image there...</p>
+        <p>Also images are not repeatings and its contained whole element</p>
+        <p>In Contain, bg-img width will change based on image width</p>
+    </div>
+    <br>
+    <div class="autosize">
+        <p>This is p tag inside div tag </p>
+        <p>You can see background-image there...</p>
+        <p>Also images are not repeatings and its not contained whole element</p>
+        <p>In auto, bg-img will be same as image size</p>
+    </div>
+
+    <h1>Background Properties - 5. background-position</h1>
+    <div class="centerposition">
+        <p>This is p tag inside div tag </p>
+        <p>You can see background-image there...</p>
+        <p>image will be center both vertically & horizontally</p>
+    </div>
+    <div class="topposition">
+        <p>This is p tag inside div tag </p>
+        <p>You can see background-image there...</p>
+        <p>image will be center only horizontal and at top</p>
+    </div>
+    <div class="leftposition">
+        <p>This is p tag inside div tag </p>
+        <p>You can see background-image there...</p>
+        <p>image will be at left and center by default</p>
+    </div>
+    <div class="topleftposition">
+        <p>This is p tag inside div tag </p>
+        <p>You can see background-image there...</p>
+        <p>image will be center at left and top</p>
+    </div>
+    <div class="bottomrightposition">
+        <p>This is p tag inside div tag </p>
+        <p>You can see background-image there...</p>
+        <p>image will be center at left and top</p>
+    </div>
+</body>
+</html>

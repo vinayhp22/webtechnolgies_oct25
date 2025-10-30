@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Selectors</title>
+    <style>
+        * {
+            
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        }
+        a {
+            color: yellowgreen;
+        }
+        .something {
+            background-color: teal;
+        }
+        p{
+            background-color: yellow;
+        }
+
+        #anything {
+            color: blueviolet;
+            background-color: chocolate;
+        }
+        
+        .first, .two, .three {
+            color: chartreuse;
+            background-color: aqua;
+        }
+
+        /* Selectors - Combinators */
+        div p {
+            padding: 20px;
+            background-color: cornflowerblue;
+        }
+        ul > li {
+            padding: 20px;
+            color: brown;
+        }
+        div > h1 {
+            padding: 40px;
+            background-color: violet;
+        }
+
+        div > b {
+            margin: 20px;
+            background-color: cadetblue;
+        }
+
+        h1 + p {
+            color: deeppink;
+            margin: 50px;
+        }
+        h6 ~ p {
+            color: turquoise;
+            margin: 30px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Selctors</h1>
+    <p>Syntax: </p>
+    <p>selector{ property : value}</p>
+    <ul>
+        <li><b>selector</b> specifies which html Elements to style.</li>
+        <li><b>property</b> tells the style to change.</li>
+        <li><b>value</b> sets to that property.</li>
+    </ul>
+    <h2>Types of Selectors</h2>
+    <h3>Basic Selectors</h3>
+    <h4>1.Universal Selector(*)</h4>
+        <p>Styling is applied to whole html page.</p>
+        <p>Example Gill Sans font family is applied to this whole page.</p>
+    <h4>2. Type Selector(Tag/Element)</h4>
+        <p>Same Styling is applied to specific tag in the html page</p>
+        <a href="#">Click me</a>
+        <p>You can see all paragraph tags are yellow background-color or highlighted</p>
+    <h4>3. Class Selector(.classname)</h4>
+        <p>Specifiv Styling is applied to those class selector tags</p>
+        <p class="something">This paragraph is different because of class selector</p>
+        <h1 class="something">This headline is different</h1>
+    <h4>4. ID Selector(#idname)</h4>
+        <p>We should use id selector one time in a whole HTML page. If you styling for only one Element, then choose id selector.</p>
+        <p id="anything">This paragraph is different because of id selector</p>
+
+    <h4>5. Group Selector(,)</h4>
+        <p>Styling to multiple Elements in one.</p>
+        <p class="first">This is a grouped Selector 1 </p>
+        <p class="two">This is a grouped Selector 1 </p>
+        <p class="three">This is a grouped Selector 1 </p>
+
+    <h3>Selectors - Combinators</h3>
+    <h4>6.Descendent Selector(space)</h4>
+        <p>Styling Elements inside another tag where parent & child tag matches, not immediate</p>
+        <p>Targets all the child elements</p>
+        <div>
+            <p>This <b>paragraph</b> is inside the div tag</p>
+            <h1>This h1 is inside div tag</h1>
+            <p>This is another paragraph is inside the div tag</p>
+        </div>
+        <ul>
+            <li>First</li>
+            <li>Second</li>
+            <li>Third</li>
+        </ul>
+    <h4>7. Child Selector(>)</h4>
+        <p>Styling Elements inside another tag where parent & child tag matches and it should immediate or first level</p>
+        <p>Targets only direct child elements</p>
+        <div>
+            <p>This <b>paragraph</b> is inside the div tag</p>
+            <h1>This h1 is inside div tag</h1>
+            <p>This is another paragraph is inside the div tag</p>
+        </div>
+    <h4>8. Adjacent Sibling Selector(+)</h4>
+        <p>Styling an element that immediately follows another element.</p>
+        <h1>This h1 tag</h1>
+        <h1>This h1 tag</h1>
+        <p>This is p tag with style</p>
+        <h1>This is another h1 tag</h1>
+        <p>This is p tag with style</p>
+        <p>This is p tag <b>without</b> style</p>
+
+
+    <h4>9. General Sibiling Selector(~)</h4>
+        <p>Styles all siblings after a specific element</p>
+        <h6>This h1 tag</h6>
+        <h6>This h1 tag</h6>
+        <p>This is p tag with style</p>
+        <h6>This is another h1 tag</h6>
+        <p>This is p tag with style</p>
+        <p>This p tag also gets style</p>
+        <a href="">See Im yellowgreen</a>
+</body>
+</html>

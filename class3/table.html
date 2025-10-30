@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tables in HTML</title>
+</head>
+<body>
+    <h1>Table</h1>
+    <p><b>table: </b> defines table</p>
+    <p><b>tr: </b> defines row (table row)</p>
+    <p><b>th: </b> defines heading (table head - bold + centered)</p>
+    <p><b>td: </b> defines data cell (table data)</p>
+
+    <table border="1">
+        <caption>Students Details</caption>
+        <tr>
+            <th>Sl. no</th>
+            <th>Name</th>
+            <th>Mobile</th>
+            <th>Email</th>
+        </tr>
+        <tr>
+            <td>1</td>
+            <td>Vinay</td>
+            <td>9297926927</td>
+            <td>vinay@gmail.com</td>
+        </tr>
+        <tr>
+            <td>2</td>
+            <td>Yashwant</td>
+            <td>98892829897</td>
+            <td>Yashwant@yahoo.com</td>
+        </tr>
+    </table>
+
+    <h3>Table merging</h3>
+    <h5>1. Columns mergining</h5>
+    <table border="1">
+        <tr>
+            <th>Id</th>
+            <th>First Name</th>
+            <th>Second Name</th>
+        </tr>
+        <tr>
+            <td>1</td>
+            <td colspan="2">Sachin Tendulkar</td>
+        </tr>
+        <tr>
+            <td>2</td>
+            <td colspan="2">Virat Kohli</td>
+        </tr>
+    </table>
+    <h5>2. Rows Merging</h5>
+    <table border="1">
+        <tr>
+            <th>Numbers</th>
+            <th>Add</th>
+            <th>Substract</th>
+        </tr>
+        <tr>
+            <th>5</th>
+            <th rowspan="2">15</th>
+            <th rowspan="2">-5</th>
+        </tr>
+        <tr>
+            <th>10</th>
+        </tr>
+    </table>
+
+    <h3>Sementic tags - information</h3>
+    <table>
+        <caption></caption>
+        <thead></thead>
+        <tbody></tbody>
+        <tfoot></tfoot>
+    </table>
+
+    <table border="1">
+        <caption>Vegetables bill</caption>
+        <thead>
+            <tr>
+                <th>Sl.no</th>
+                <th>Items</th>
+                <th>Price</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>1</td>
+                <td>Tamota</td>
+                <td>25</td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td>Carrot</td>
+                <td>75</td>
+            </tr>
+            <tr>
+                <td>3</td>
+                <td>Onion</td>
+                <td>50</td>
+            </tr>
+        </tbody>
+        <tfoot>
+            <tr>
+                <td colspan="2">Total:</td>
+                <td>150</td>
+            </tr>
+        </tfoot>
+    </table>
+</body>
+</html>

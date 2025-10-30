@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        p {
+            font-size: 16px;
+        }
+        div {
+            width: 50%;
+        }
+        h1 {
+            font-size: 2em;
+        }
+
+        .div1{
+            font-size: 20px;
+        }
+        /* for em */
+        p {
+            font-size: 1em; /* 20px */
+        }
+         /* for rem */
+        p {
+            font-size: 1em; /* 16px */
+        }
+        .box {
+            width: 50vw;
+            height: 10vh;
+            background-color: cyan;
+        }
+        
+    </style>
+</head>
+<body>
+    <h1>CSS Units</h1>
+    <h2>1. Absolute Units - fixed size</h2>
+        <p>Are independent, or fixed</p>
+        <h3>1. pixel -px</h3>
+        <p>This is p tag with 16px</p>
+    <h2>2. Relative Units</h2>
+        <p>Are dependent, or changed</p>
+        <h3>1. Percentage: % - relative to parent</h3>
+        <div>
+            <p>A paragraph is a distinct section of writing that focuses on a single idea or topic, consisting of one or more sentences. It is used to organize longer texts, making them easier for the reader to follow. Key components include a topic sentence, which introduces the main idea, followed by supporting sentences that provide details, and a concluding sentence to wrap up the thought. </p>
+        </div>
+        
+        <h3>2. em - relative to the font-size of the parent</h3>
+        <h1>This is h1 tag - for em example</h1>
+        <p>for html tag - default font-size is 16px</p>
+        <div class="div1">
+            <p>This p tag is inside div tag</p>
+        </div>
+        1em - 16px,
+        2em - 32px,
+        3em - 48px,....
+
+        1em = 100% - 1 time
+        2em = 200% - 2times
+        3em = 300% - 3times
+
+        <h3>3. rem - relative to the font-size of the root tag(html tag)</h3>
+        <div class="div1">
+            <p>This p tag is inside div tag</p>
+        </div>
+
+        <h3>4. viewport - vh/vw</h3>
+        <p>Based on screen size the objects will align</p>
+        <h4>vh - viewport height</h4>
+        <h4>vw - viewport width</h4>
+
+        <div class="box"></div>
+
+        <p>This is <span >p tag</span></p>
+</body>
+</html>

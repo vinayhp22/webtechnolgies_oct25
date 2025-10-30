@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        p {
+            font-size: 16px;
+        }
+        @media(max-width: 600px){
+            p {
+                font-size: 14px;
+            }
+        }
+
+        @media(max-width: 1200px) {
+            p {
+                font-size: 50px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <img src="small.jpg" alt="responsive">
+    <h1>Responsive Images</h1>
+    <picture>
+        <source media="(max-width: 600px)" srcset="small.jpg">
+        <source media="(max-width: 1200px)" srcset="large.jpg">
+        <img src="small.jpg" alt="responsive">
+    </picture>
+
+    <h1>Responsive Texts</h1>
+    <p>This is p tag</p>
+    <h1 style="font-size: 5vw;">This h1 tag</h1>
+
+    
+</body>
+</html>

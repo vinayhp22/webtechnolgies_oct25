@@ -1,0 +1,23 @@
+.header {
+    background-image: url(../class17-css9/image.jpg);
+    background-position: right top;
+    height: 200px;
+    background-repeat: no-repeat;
+}
+.header .tagline {
+    font-style: italic;
+    text-decoration: underline;
+    text-decoration-color: red;
+    color: gray;
+}
+
+.detailsdiv {
+    display: inline;
+}
+.header .description {
+    width: 60%;
+}
+
+body {
+    margin: 50px;
+}

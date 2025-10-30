@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML Font Family</title>
+    <link 
+    rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700;900&family=Roboto:wght@500;700;900&display=swap&display=swap">
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+        }
+        .p400 {
+            font-weight: 400;
+        }
+        .p700 {
+            font-weight: 700;
+        }
+        .p900 {
+            font-weight: 900;
+        }
+    </style>
+</head>
+<body>
+    <h4>1. Using HTML</h4>
+    <p>1. Go to https://fonts.google.com</p>
+    <p>2. Select the font (eg. Roboto or Poppins)</p>
+    <p>3. Choose the style/weights(Regular, Bold, Italic)</p>
+    <p>4. Copy the link tag snippet</p>
+    <p>5. Paste inside link tag inside head tag</p>
+
+    <p class="p400">Poopins 400 weight</p>
+    <p class="p700">Poopins 700 weight</p>
+    <p class="p900">Poopins 900 weight</p>
+
+    <!-- For Multiple Fonts -->
+    <!-- https://fonts.googleapis.com/css2?family=Poppins:wght@400;700;900&family=Roboto:wght@500;700;900&display=swap -->
+
+    <h1>Best Practices</h1>
+    <p>1. Limit fonts weights & styles </p>
+    <p>2. Use display=swap - ensures text is displayed immediately using fallback fonts</p>
+    <p>3. Always provide fall-back fonts</p>
+    <p>4. preconnect - can improve font loading performance</p>
+</body>
+</html>

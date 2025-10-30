@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Forms in HTML</title>
+</head>
+<body>
+    
+    <h1>Forms in HTML</h1>
+    <p>action attribute -> it'll call backed api to store/process the form data</p>
+    <p>method attribute -> Get(values showed on URL - Insecure) & Post(values will be secure)</p>
+
+    <form action="register">
+        <label for="name">Full Name: </label> <br>
+        <input type="text" name="name" placeholder="Enter Your Name" value="Yash" readonly>
+        <br><br>
+        <label for="mobile">Mobile Number:</label> <br>
+        <input type="number" name="mobile" placeholder="Enter Your Mobile Number">
+        <br><br>
+        <label for="email">Email:</label> <br>
+        <input type="email" name="email" placeholder="Enter Your Email">
+        <br><br>
+        <!-- dropdown -->
+        <label for="course">Select the Course:</label> <br>
+        <select name="course">
+            <option value="">Select the Course</option>
+            <option value="java">Vtech</option>
+            <option value="python">Python</option>
+            <option value="web">Web</option>
+            <option value="js">JS</option>
+        </select>
+        <br><br>
+        <!-- radio - only one selection is possible -->
+        <label for="gender">Select the Gender:</label> <br>
+        <input type="radio" name="gender" value="male"> <label for="male">Male</label> <br>
+        <input type="radio" name="gender" value="female"> <label for="female">Female</label> <br>
+        <input type="radio" name="gender" value="others"> <label for="others">Others</label>
+        <br><br>
+        <!-- checkbox - multiple selection is possible -->
+        <label for="skills">Select the skills</label> <br>
+        <input type="checkbox" name="skills" value="java"><label for="java">Java</label> <br>
+        <input type="checkbox" name="skills" value="python"><label for="python">Python</label> <br>
+        <input type="checkbox" name="skills" value="web"><label for="web">Web</label> <br>
+        <br><br>
+        <label for="feedback">Feedback: </label>
+        <textarea name="feedback" cols="20" rows="5"></textarea>
+        <br><br>
+        <input type="submit" value="Send">
+    </form>
+
+    <h4>Http methods : Get, Post</h4>
+
+    <h1>Login Form</h1>
+    <form action="login" method="get">
+        <label for="username">Username:</label>
+        <input type="text" name="username" placeholder="Enter the username" required>
+        <br>
+        <label for="password">Password:</label>
+        <input type="password" name="password" placeholder="Enter the Password" required> 
+        <br>
+        <button type="submit">Submit</button>
+        <button type="reset">Reset</button>
+    </form>
+</body>
+</html>
+
+
+Task:
+1. Survey Form:
+    * A text input for Full name
+    * Age (number input)
+    * How satisfied are you? - radio buttons
+    (Very Satisfied, satisfied, Neutral, Dissatisfied)
+    * What topics are you interested in? - checkbox
+    (HTML, CSS, JS, Python, Java)
+    * Feedback - textarea 
+    * A submit button
+
+2. Job Application Form
+    * Name - text input
+    * Resume - file input 
+    * preferred job role (dropdown)
+    * Availability - (date picker)
+    * Expected Salary - number input 
+    * Skills - checkbox
+    * Submit button

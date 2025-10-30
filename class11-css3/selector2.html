@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        input[type="text"], input[type="number"] {
+            border: 1px dashed blue;
+        }
+
+        a[target="_blank"]{
+            color: red;
+        }
+
+        /* Pseudo - clasess */
+        a:hover {
+            color: green;
+        }
+        input:focus {
+            background-color: yellow;
+        }
+        p:first-child{
+            font-size: x-large;
+            font-weight: bold;
+        }
+
+        /* Pseudo - elements */
+        p::first-letter{
+            font-size: 24px;
+            color: brown;
+        }
+        h1::after {
+            content: "*";
+            color: gold;
+        }
+
+        
+    </style>
+</head>
+<body>
+    <h1>Types of Selector</h1>
+    <h2>Basic Selectors</h2>
+    <p>1. Universal Selector (*)</p>
+    <p>2. Type Selector(tag)</p>
+    <p>3. Class Selector(.classname)</p>
+    <p>4. ID selector(#idname)</p>
+    <p>5. Group Selector(,)</p>
+<br>
+    <h2>Selectors - Combinators</h2>
+    <p>6. Descendent Selector(space)</p>
+    <p>7. Child Selector(>)</p>
+    <p>8. Adjacent Sibling Selector(+)</p>
+    <p>9. General Sibling Selector(~)</p>
+<br>
+    <h2>Advanced Selectors</h2>
+    <h3>10.Attribute Selector</h3>
+    <p>Styles elements based on their attributes</p>
+    <form action="">
+        Name: <input type="text" name="name">
+        Mobile: <input type="number">
+    </form>
+    <a href="#" target="_blank">Click Me</a>
+    <p>This is useful for forms and links</p>
+
+    <h3>11. Pseudo-classes(:)</h3>
+    <p>Styles elements in special states</p>
+    <a href="#">Click Me</a>
+    <br>
+    <input type="text">
+    <div><p>This is p tag</p></div>
+    
+    <h3>12. Pseudo-elements(::)</h3>
+    <p>styles parts of elements or insert content</p>
+    <p>This is p tag</p>
+    <h1>This is headline so * symbol you can see</h1>
+
+
+    
+</body>
+</html>

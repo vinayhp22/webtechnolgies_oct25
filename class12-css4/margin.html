@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .uniformbox {
+            margin: 50px;
+            border: 1px solid black;
+        }
+        .invidualbox {
+            margin-top: 10px;
+            margin-bottom: 20px;
+            margin-left: 30px;
+            margin-right: 40px;
+            border: 1px solid black;
+        }
+        .semiuniform {
+            margin: 20px 40px;
+            border: 1px solid black;
+        }
+        .negative {
+            margin-top: -100px;
+            border: 1px solid black;
+        }
+        .horizontal1{
+            margin: 10px;
+            border: 1px solid black;
+        }
+        .horizontal2 {
+            margin: -20px;
+            border: 1px solid black;
+        }
+        .box1 {
+            width: 20px;
+            height: 20px;
+            margin-bottom: 20px;
+            border: 1px solid black;
+        }
+        .box2 {
+            width: 20px;
+            height: 20px;
+            margin-top: 20px;
+            border: 1px solid black;
+        }
+    </style>
+</head>
+<body>
+    <h1>Margin</h1>
+    <p>The space outside the border of an element wrt other element.</p>
+    <p>Adds external space around the element.</p>
+    <p>Can collapse vertically & horizontally</p>
+    <p>Can be uniform or Individual</p>
+    <h4>Properties</h4>
+    <p>For Uniform margin: margin</p>
+    <p>For Individual margin: margin-top, margin-buttom,margin-left,margin-right</p>
+
+    <div class="uniformbox">
+        <p>Uniform Box - 50px margin</p>
+    </div>
+    <div class="invidualbox">
+        <p>Individual Box - top - 10px, btm - 20px, l-30px, r-40px</p>
+    </div>
+    <div class="semiuniform">
+        <p>Vertical-horizontal margin: vertical: 20px(t & b), horizontally: 40px(l & r)</p>
+    </div>
+    <div class="negative">
+        <p>This box is overlapped with other box</p>
+    </div>
+    <a class="horizontal1">Achor 1</a> 
+    <a class="horizontal2">Achor 2</a>
+
+
+    <div class="box1"></div>
+    <div class="box2"></div>
+
+    <p><b>Note:</b>The distance between above 2 boxes is 20px,not 40px - because horizontal collapsing.</p>
+    
+</body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Light-height</title>
+    <style>
+        p.lh10 {
+            font-size: 18px;
+            line-height: 10;
+        }
+        p.lh1 {
+            font-size: 36px;
+            line-height: 1;
+        }
+        p.lh2 {
+            line-height: 2;
+        }
+    </style>
+</head>
+<body>
+    <h1>Line-height : spacing between two lines</h1>
+    <p>It is unitless, but it <b>multiplies with font size</b>.</p>
+    <p>This is applied only for texts, not for images or other elements</p>
+
+    <p class="lh10">lh10 - This is P tag with line-height 10 where font size is 18px, so total height of this element is 180px only if it is in single line.</p>
+    <p class="lh1">lh1 - This is P tag with line-height 1 where font-size is 36px, so total height of this element is 36px only if it is in single line</p>
+    <p class="lh2">lh2 - This is P tag with line-height 1 where font-size is un defined for this tag, so total height of this element is 32px, 
+        i.e multiplied with root element (html tag)'s default size of 16px only if it is in single line</p>
+
+    <p><b>Note:</b> If lines increses, total height of the element also increses.</p>
+    <p class="lh2">if this is in single line then total height would be 32px</p>
+    <p class="lh2">if this is in 2 lines then total height would be 64px</p>
+    <p class="lh2">if this is in 3 lines then total height would be 96px</p>
+    <p class="lh2">if this is in 4 lines then total height would be 128px</p>
+
+</body>
+</html>
