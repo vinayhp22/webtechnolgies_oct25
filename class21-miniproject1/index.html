@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio</title>
+    <link rel="shortcut icon" href="icon1.jpg" type="image/x-icon">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header>
+        <h1>My Web Card</h1>
+        <nav>
+            <a href="#">About</a>
+            <a href="#">Skills</a>
+            <a href="#">Contact</a>
+        </nav>
+    </header>
+    <section id="about" class="about">
+        <h2>About Me</h2>
+        <img src="profile.jpg" alt="profile">
+        <p>Hello! I'm <mark><b>John Doe</b></mark>, an aspiring <i>Web Developer.</i> I enjoy learning <u>HTML and
+                CSS</u> and building creative web pages!</p>
+        <ul>
+            <li>Hobby: Coding & Reading</li>
+            <li>Favourite Language: HTML</li>
+            <li>Goal: Become a Full Stack Developer</li>
+        </ul>
+    </section>
+
+    <section id="skills" class="skills">
+        <h2>My Skills</h2>
+        <table border="1">
+            <tr>
+                <th rowspan="2">Frontend Skills</th>
+                <td>HTML</td>
+                <td>Advanced</td>
+            </tr>
+            <tr>
+                <td>CSS</td>
+                <td>Intermediate</td>
+            </tr>
+            <tr>
+                <th colspan="3">Other Skills</th>
+            </tr>
+            <tr>
+                <td colspan="3">Basics of Client-Server Architecture, IP, DNS, and URLS</td>
+            </tr>
+        </table>
+    </section>
+
+    <section id="contact">
+        <h2>Contact Me</h2>
+        <form action="">
+            <label for="name">Name:</label>
+            <input type="text" name="name" placeholder="Enter Your Name" required>
+
+            <label for="email">Email:</label>
+            <input type="email" name="email" placeholder="Enter Your Email" required>
+
+            <label for="reason">Reason for Contact:</label>
+            <select name="reason" id="" required>
+                <option value="">General Inquiry</option>
+                <option value="">Feedback</option>
+                <option value="">Collaboration</option>
+            </select>
+            <label for="message">Message:</label>
+            <textarea name="message" placeholder="Write Your Message here" rows="4" cols="30" required></textarea>
+            <input type="button" value="Send Message">
+        </form>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 Vtech | <a href="">LinkedIn</a> | <a href="">Github</a></p>
+    </footer>
+</body>
+
+</html>
