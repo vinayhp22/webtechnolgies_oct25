@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project 3 - Porfolio</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="layout">
+        <!-- Sidebar -->
+        <aside>
+            <div class="brand">
+                <img src="profile.jpeg" alt="Profile">
+                <div>
+                    <h1>Alex Rivera</h1>
+                    <small>Frontend Developer</small>
+                </div>
+            </div>
+            <nav aria-label="Primary">
+                <a href="#about">About</a>
+                <a href="#skills">Skills</a>
+                <a href="#projects">Projects</a>
+                <a href="#timeline">Timeline</a>
+                <a href="#contact">Contact</a>
+            </nav>
+            <div class="socials">
+                <a class="btn" href="#">LinkedIn</a>
+                <a class="btn" href="#">Github</a>
+                <a class="btn" href="#">Twitter</a>
+                <a class="btn" href="#">Resume</a>
+            </div>
+        </aside>
+
+        <!-- ======= Main ======= -->
+        <main>
+            <!-- Hero / About  -->
+            <section class="hero" id="about">
+                <p class="section-title">About</p>
+                <h2>Hi,I’m Alex — I build fast, accessible, and beautiful web interfaces.</h2>
+                <p>I specialise in semantic HTML, modern CSS and a11y-first design. I turning complex problems
+                    intodelightful user experiences using clean design systems and efficient front‑end architecture.</p>
+                <div class="tags">
+                    <span class="tag">HTML5</span>
+                    <span class="tag">CSS(Grid & Flexbox)</span>
+                    <span class="tag">Accessibility</span>
+                    <span class="tag">Design Systems</span>
+                </div>
+            </section>
+
+            <!-- Skills Section -->
+            <section id="skills">
+                <p class="section-title">Skills</p>
+                <div class="skills">
+                    <div class="skill-row">
+                        <strong>HTML</strong>
+                        <div class="bar" style="--p: 95"></div>
+                        <div class="pct">95%</div>
+                    </div>
+                    <div class="skill-row">
+                        <strong>CSS</strong>
+                        <div class="bar" style="--p: 90"></div>
+                        <div class="pct">90%</div>
+                    </div>
+                    <div class="skill-row">
+                        <strong>Accessibility</strong>
+                        <div class="bar" style="--p: 88"></div>
+                        <div class="pct">88%</div>
+                    </div>
+                    <div class="skill-row">
+                        <strong>Design Systems</strong>
+                        <div class="bar" style="--p: 80"></div>
+                        <div class="pct">80%</div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Projects Section -->
+            <section id="projects">
+                <p class="section-title">PROJECTS</p>
+                <div class="projects">
+                    <article class="card">
+                        <img src="project1.jpeg" alt="Project 1">
+                        <div class="content">
+                            <h3>Analytics Dashboard</h3>
+                            <p>Responsive admin dashboard concept using CSS Grid layouts and fluid typography.</p>
+                            <div class="badges">
+                                <span class="badge">Grid</span>
+                                <span class="badge">Cards</span>
+                                <span class="badge">Responsive</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="card">
+                        <img src="project2.jpeg" alt="Project 2">
+                        <div class="content">
+                            <h3>Product Gallery</h3>
+                            <p>Pure CSS hover interactions for a minimal e‑commerce catalogue.</p>
+                            <div class="badges">
+                                <span class="badge">Flexbox</span>
+                                <span class="badge">Hover</span>
+                                <span class="badge">UI</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="card">
+                        <img src="project3.jpeg" alt="Project 3">
+                        <div class="content">
+                            <h3>Landing Page</h3>
+                            <p>Hero section with gradient accents, sticky navigation, and scroll-friendly sections.</p>
+                            <div class="badges">
+                                <span class="badge">Hero</span>
+                                <span class="badge">Sticky</span>
+                                <span class="badge">Gradient</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="card">
+                        <img src="project4.jpeg" alt="Project 4">
+                        <div class="content">
+                            <h3>Blog Layout</h3>
+                            <p>Typography-first article template with readable line lengths and spacing rhythm.</p>
+                            <div class="badges">
+                                <span class="badge">Typography</span>
+                                <span class="badge">Readable</span>
+                                <span class="badge">Template</span>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+            </section>
+
+            <!-- TIMELINE Section -->
+             <section id="timeline">
+                <p class="section-title">TIMELINE</p>
+                <div class="timeline">
+                    <div class="tl-item">
+                        <div class="tl-title">Frontend Developer • Freelance</div>
+                        <div class="tl-meta">2023 — Present</div>
+                        <p>Building marketing sites and design systems for startups.</p>
+                    </div>
+
+                    <div class="tl-item">
+                        <div class="tl-title">UI Engineer • PixelCraft</div>
+                        <div class="tl-meta">2021 — 2023</div>
+                        <p>Led component library migration to CSS Grid/Flex and improved a11y score by 30%.</p>
+                    </div>
+
+                    <div class="tl-item">
+                        <div class="tl-title">B.Sc. Computer Science</div>
+                        <div class="tl-meta">2018 — 2021</div>
+                        <p>Graduated with distinction; capstone on responsive design patterns.</p>
+                    </div>
+                </div>
+             </section>
+
+             <!-- CONTACT Section -->
+            <section id="contact">
+                <p class="section-title">CONTACT</p>
+                <form action="#">
+                    <input type="text" name="name" placeholder="Your Name">
+                    <input type="email" placeholder="you@example.com">
+                    <textarea name="" id="" placeholder="Say hello..." rows="5"></textarea>
+                    <button type="submit">Send Message</button>
+                </form>
+            </section>
+        <!-- Footer -->
+            <footer>
+                &copy; 2025 Alex Rivera — Made with pure HTML & CSS ✨
+            </footer>
+        </main>
+
+    </div>
+</body>
+
+</html>
