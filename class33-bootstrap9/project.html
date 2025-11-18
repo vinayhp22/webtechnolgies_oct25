@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="bootstrap-5.3.8-dist/css/bootstrap.min.css">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container">
+            <a class="navbar-brand" href="#">MyProject</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarExample">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarExample">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link active" href="">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#features">Features</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <!-- Hero Section -->
+    <section class="bg-light p-5 text-center">
+        <div class="container">
+            <h1 class="display-4 fw-bold">Welcome to Bootstrap 5 Project</h1>
+            <p class="lead">Fully responsive layout using Bootstrap 5 Components.</p>
+            <a href="#features" class="btn btn-primary btn-lg mt-3">Explore Features</a>
+        </div>
+    </section>
+    <!-- Features Section -->
+    <section id="features" class="py-5">
+        <div class="container">
+            <h2 class="text-center mb-4">Features</h2>
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <div class="card shadow-sm h-100">
+                        <div class="card-body">
+                            <h4 class="card-title">Fast</h4>
+                            <p class="card-text">Optimised responsive UI with Bootstrap utilities.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card shadow-sm h-100">
+                        <div class="card-body">
+                            <h4 class="card-title">Clean UI</h4>
+                            <p class="card-text">Simple modern and elegant UI design.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card shadow-sm h-100">
+                        <div class="card-body">
+                            <h4 class="card-title">Responsive</h4>
+                            <p class="card-text">Works smoothly on mobile, tablet or desktop.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Contact Section -->
+    <section class="bg-dark text-light py-5" id="contact">
+        <div class="container">
+            <h2 class="text-center mb-4">Contact</h2>
+            <div class="row justify-content-center">
+                <div class="col-md-6">
+                    <form action="">
+                        <div class="mb-3">
+                            <label for="" class="form-label">Name</label>
+                            <input type="text" class="form-control">
+                        </div>
+                        <div class="mb-3">
+                            <label for="" class="form-label">Email</label>
+                            <input type="email" class="form-control">
+                        </div>
+                        <div class="mb-3">
+                            <label for="" class="form-label">Message</label>
+                            <textarea type="text" class="form-control" rows="4"></textarea>
+                        </div>
+                        <button class="btn btn-primary">Submit</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+     <footer class="bg-secondary text-light text-center py-3">
+        <p class="mb-0"> &copy; 2025 MyProject. All Rights reserved</p>
+     </footer>
+
+
+    <script src="bootstrap-5.3.8-dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>

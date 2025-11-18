@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grid System : Container, Columns, Rows</title>
+    <link rel="stylesheet" href="bootstrap-5.0.2-dist/css/bootstrap.min.css">
+</head>
+
+<body>
+    <h1>Grid System : Container, Columns, Rows</h1>
+
+    <h2>Container:</h2>
+    <p>Acts as a wrapper for the website.</p>
+    <p>Centers and provides padding on the left and right </p>
+    <p>2 types:</p>
+    <h4>1. container: fixed width at different break-points(screen sizes)</h4>
+    <div class="container">
+        <div class="row">
+            <div class="col bg-primary">Column 1</div>
+            <div class="col bg-success">Column 2</div>
+            <div class="col bg-warning">Column 3</div>
+            <div class="col bg-danger">Column 4</div>
+        </div>
+    </div>
+    <h4>2. container-fluid: full width(100% of view port)</h4>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col bg-primary">Column 1</div>
+            <div class="col bg-success">Column 2</div>
+            <div class="col bg-warning">Column 3</div>
+            <div class="col bg-danger">Column 4</div>
+        </div>
+    </div>
+
+    <h2>row: </h2>
+    <p>Inside a container, rows hold columns</p>
+    <p>Always wrap columns inside rows to avoid alignment issues</p>
+    <h4>Fixed 12 columns</h4>
+    <div class="container">
+        <div class="row">
+            <div class="col-1 bg-primary">1</div>
+            <div class="col-1 bg-success">2</div>
+            <div class="col-1 bg-warning">3</div>
+            <div class="col-1 bg-danger">4</div>
+            <div class="col-1 bg-primary">5</div>
+            <div class="col-1 bg-success">6</div>
+            <div class="col-1 bg-primary">7</div>
+            <div class="col-1 bg-success">8</div>
+            <div class="col-1 bg-warning">9</div>
+            <div class="col-1 bg-danger">10</div>
+            <div class="col-1 bg-primary">11</div>
+            <div class="col-1 bg-success">12</div>
+        </div>
+    </div>
+
+    <h2>column(col)</h2>
+        <p>Inside rows, columns divide space horizontally.</p>
+        <p>Bootstrap uses a 12-column layout.</p>
+     <div class="container">
+        <h5>Fixed 6 columns : Each element occupies 2 columns, so this row accomadates only 6 elements</h5>
+        <div class="row">
+            <div class="col-2 bg-primary">1</div>
+            <div class="col-2 bg-success">2</div>
+            <div class="col-2 bg-warning">3</div>
+            <div class="col-2 bg-danger">4</div>
+            <div class="col-2 bg-primary">5</div>
+            <div class="col-2 bg-success">6</div>
+        </div>
+
+        <h5>Fixed 3 columns: Each element occupies 4 columns, so this row accomadates only 3 elements</h5>
+        <div class="row">
+            <div class="col-4 bg-primary">1</div>
+            <div class="col-4 bg-success">2</div>
+            <div class="col-4 bg-warning">3</div>
+        </div>
+        <h5>Uneven column distribution for this row, maximum 12 columns space can allocated.</h5>
+        <div class="row">
+            <div class="col-3 bg-primary">1</div>
+            <div class="col-4 bg-success">2</div>
+            <div class="col-3 bg-warning">3</div>
+            <div class="col-2 bg-danger">4</div>
+        </div>
+        <h5>Auto layout columns: 2 columns with col, so equally 2 elements will allocated.</h5>
+        <div class="row">
+            <div class="col bg-primary">1</div>
+            <div class="col bg-success">2</div>
+        </div>
+    </div>  
+    <div>
+        <h4>Break-points & their classes</h4>
+        <p><b>col</b> : equally divide the row for columns</p>
+        <p><b>col-(value) </b> : extra small devices(width <= 576px)</p>
+        <p><b>col-sm-(value) </b> : small devices(width >= 576px)</p>
+        <p><b>col-md-(value) </b> : medium devices(width >= 768px)</p>
+        <p><b>col-lg-(value) </b> : large devices(width >= 992px)</p>
+        <p><b>col-xl-(value) </b> : extra large devices(width >= 1200px)</p>
+
+
+        <div class="row">
+            <div class="col-3 col-md-2 bg-primary">1</div>
+            <div class="col-3 col-md-2 bg-success">2</div>
+            <div class="col-3 col-md-2 bg-warning">3</div>
+            <div class="col-3 col-md-2 bg-danger">4</div>
+        </div>
+       
+        <h2>Real-time Example:</h2>
+        <div class="row">
+            <div class="col-12 col-md-6 bg-primary">
+                <h1>Welcome to Bootstrap</h1>
+                <p>In Grid System, rows are accomodating the columns</p>
+                <p>In 1 row, 12 columns can give</p>
+            </div>
+            <div class="col-12 col-md-6 bg-warning">
+                <form action="">
+                    Name: <input type="text" > <br>
+                    Email: <input type="email" > <br>
+                    Number: <input type="number" > <br>
+                    Course: <input type="text" > <br>
+                    <input type="button" value="Submit" class="btn btn-primary">
+                </form>
+            </div>
+        </div>
+    </div>  
+</body>
+</html>

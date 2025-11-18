@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alerts in Bootstrap</title>
+    <link rel="stylesheet" href="bootstrap-5.0.2-dist/css/bootstrap.min.css">
+</head>
+
+<body class="m-4">
+    <h1>Alerts in Bootstrap</h1>
+
+    <h1>Basic Alerts</h1>
+    <div class="alert alert-primary">
+        This is a <strong>Primary</strong> Alert!
+    </div>
+    <div class="alert alert-secondary">
+        This is a <strong>Secondary</strong> Alert!
+    </div>
+    <div class="alert alert-success">
+        This is a <strong>Success</strong> Alert - Well Done.
+    </div>
+    <div class="alert alert-danger">
+        This is a <strong>Danger</strong> Alert - Something went wrong.
+    </div>
+    <div class="alert alert-warning">
+        This is a <strong>Warning</strong> Alert - Be careful.
+    </div>
+    <div class="alert alert-info">
+        This is a <strong>Info</strong> Alert - Some extra info.
+    </div>
+    <div class="alert alert-light">
+        This is a <strong>Light</strong> Alert - simple message.
+    </div>
+    <div class="alert alert-dark">
+        This is a <strong>Dark</strong> Alert - Strong message.
+    </div>
+
+    <h2>Dismissible Alerts</h2>
+    <div class="alert alert-primary alert-dismissible fade show">
+        This is a <strong>Primary</strong> Alert!
+        <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+    </div>
+    <div class="alert alert-secondary  alert-dismissible fade show">
+        This is a <strong>Secondary</strong> Alert!
+        <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+    </div>
+    <div class="alert alert-success  alert-dismissible fade show">
+        This is a <strong>Success</strong> Alert - Well Done.
+        <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+    </div>
+    <div class="alert alert-danger  alert-dismissible fade show">
+        This is a <strong>Danger</strong> Alert - Something went wrong.
+        <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+    </div>
+    <div class="alert alert-warning alert-dismissible fade show">
+        This is a <strong>Warning</strong> Alert - Be careful.
+        <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+    </div>
+    <div class="alert alert-info alert-dismissible fade show">
+        This is a <strong>Info</strong> Alert - Some extra info.
+        <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+    </div>
+    <div class="alert alert-light alert-dismissible fade show">
+        This is a <strong>Light</strong> Alert - simple message.
+        <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+    </div>
+    <div class="alert alert-dark alert-dismissible fade show">
+        This is a <strong>Dark</strong> Alert - Strong message.
+        <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+    </div>
+
+    <h3>Reference to JS alert</h3>
+
+    <button onclick="giveAlert()">Click Me</button>
+    <script>
+        function giveAlert() {
+            alert("This is the simple js alert");
+        }
+    </script>
+
+    <script src="bootstrap-5.0.2-dist/js/bootstrap.min.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Images in Bootstrap</title>
+    <link rel="stylesheet" href="bootstrap-5.0.2-dist/css/bootstrap.min.css">
+</head>
+<body class="p-4">
+    <h1>Images in Bootstrap</h1>
+
+    <p>1. Responsive Image(img-fluid)(100% width and auto height)</p>
+    <img src="image.jpeg" alt="Responsive Image" class="img-fluid">
+    <br>
+    <img src="image.jpeg" alt="Irresponsive Image" class="img">
+    <hr>
+    <p>2. Rounded Image(rounded)</p>
+    <img src="image1.jpeg" alt="Rounded Image" class="rounded mb-2">
+    <img src="image1.jpeg" alt="Top Rounded Image" class="rounded-top mb-2">
+    <img src="image1.jpeg" alt="Bottom Rounded Image" class="rounded-bottom mb-2">
+    <img src="image1.jpeg" alt="Left Rounded Image" class="rounded-start mb-2">
+    <img src="image1.jpeg" alt="Right Rounded Image" class="rounded-end mb-2">
+
+    <hr>
+    <p>3. Circled Image</p>
+    <img src="image2.jpeg" alt="Circle image" class="rounded-circle">
+
+    <hr>
+    <p>4. Image Thumbnail</p>
+    <img src="image2.jpeg" alt="Thumbnail image" class="img-thumbnail">
+
+    <hr>
+    <!-- Combined Example -->
+    <h4>Profile Card Example</h4>    
+    <div class="card" style="width: 18rem;">
+        <img src="image2.jpeg" alt="profile image" class="card-img-top rounded-circle p-3">
+        <div class="card-body text-center">
+            <h5 class="card-title">Yeshwant</h5>
+            <p class="card-text">Web Developer</p>
+            <a href="#" class="btn btn-primary">View Profile</a>
+        </div>
+    </div>
+</body>
+</html>

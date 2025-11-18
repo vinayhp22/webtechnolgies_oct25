@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Navbar in Bootstrap</title>
+    <link rel="stylesheet" href="bootstrap-5.3.8-dist/css/bootstrap.min.css">
+</head>
+
+<body>
+    <div class="container py-4">
+        <h1 class="text-center mb-4">Navbar in Bootstrap</h1>
+
+        <h3>1. Basic Navbar</h3>
+        <nav class="navbar navbar-expand navbar-dark bg-dark mb-4">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="">Mysite</a>
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a href="#" class="nav-link active">Home</a></li>
+                    <li class="nav-item"><a href="#" class="nav-link">About</a></li>
+                    <li class="nav-item"><a href="#" class="nav-link">Contact</a></li>
+                </ul>
+            </div>
+        </nav>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark mb-4">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="">Mysite</a>
+                <button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbarDark">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarDark">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item"><a href="#" class="nav-link active">Home</a></li>
+                        <li class="nav-item"><a href="#" class="nav-link">About</a></li>
+                        <li class="nav-item"><a href="#" class="nav-link">Contact</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+        <h3 class="mb-4">2. Light Navbar</h3>
+        <nav class="navbar navbar-expand-lg navbar-light bg-light mb-4">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="">Mysite</a>
+                <button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbarLight">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarLight">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item"><a href="#" class="nav-link active">Home</a></li>
+                        <li class="nav-item"><a href="#" class="nav-link">About</a></li>
+                        <li class="nav-item"><a href="#" class="nav-link">Contact</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+        <h3 class="mb-4">3.  Navbar with Brand Logo</h3>
+        <nav class="navbar navbar-expand-lg navbar-light bg-light mb-4">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="">
+                    <img src="logo.jpg" alt="" class="d-inline-block align-text-top" style="height: 75px;">
+                </a>
+                <button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbarLogo">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarLogo">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item"><a href="#" class="nav-link active">Home</a></li>
+                        <li class="nav-item"><a href="#" class="nav-link">About</a></li>
+                        <li class="nav-item"><a href="#" class="nav-link">Contact</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+        <h3 class="mb-4">4.  Navbar with Dropdown</h3>
+        <nav class="navbar navbar-expand-lg navbar-light bg-light mb-4">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="">
+                    <img src="logo.jpg" alt="" class="d-inline-block align-text-top" style="height: 75px;">
+                </a>
+                <button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbarDrop">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarDrop">
+                    <ul class="navbar-nav ms-auto">
+                        <li  class="nav-item"><a class="nav-link active" href="">Home</a></li>
+                        <li class="nav-item dropdown">
+                            <a href="#" class="nav-link dropdown-toggle"  
+                            data-bs-toggle="dropdown" data-bs-target="#navDropdown" role="button">Services</a>
+                            <ul class="dropdown-menu" id="navDropdown">
+                                <li class="dropdown-item">Web Design</li>
+                                <li class="dropdown-item">Development</li>
+                                <li class="dropdown-divider"></li>
+                                <li class="dropdown-item">Support</li>
+                            </ul>
+                        </li>
+                        <li class="nav-item"><a href="#" class="nav-link">About</a></li>
+                        <li class="nav-item"><a href="#" class="nav-link">Contact</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+        <h3 class="mb-4">5. Navbar with Search</h3>
+        <nav class="navbar navbar-expand-lg navbar-light bg-info mb-4">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="">
+                    <img src="logo.jpg" alt="" class="d-inline-block align-text-top" style="height: 75px;">
+                </a>
+                <button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbarSearch">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSearch">
+                    <ul class="navbar-nav ms-auto">
+                        <li  class="nav-item"><a class="nav-link active" href="">Home</a></li>
+                        <li class="nav-item dropdown">
+                            <a href="#" class="nav-link dropdown-toggle"  
+                            data-bs-toggle="dropdown" data-bs-target="#navDropdown" role="button">Services</a>
+                            <ul class="dropdown-menu" id="navDropdown">
+                                <li class="dropdown-item">Web Design</li>
+                                <li class="dropdown-item">Development</li>
+                                <li class="dropdown-divider"></li>
+                                <li class="dropdown-item">Support</li>
+                            </ul>
+                        </li>
+                        <li class="nav-item"><a href="#" class="nav-link">About</a></li>
+                        <li class="nav-item"><a href="#" class="nav-link">Contact</a></li>
+                    </ul>
+                    <form action="" class="d-flex">
+                        <input type="text" placeholder="Search..." class="form-control me-2">
+                        <button class="btn btn-light">Search</button>
+                    </form>
+                </div>
+            </div>
+        </nav>
+
+
+        <h3 class="mb-4">6. Fixed Navbar</h3>
+        <p class="small text-muted">Scroll down to see the effect(this navbar stays at the top)</p>
+        <nav class="navbar navbar-expand-lg navbar-dark fixed-top bg-dark mb-4">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="">
+                    <img src="logo.jpg" alt="" class="d-inline-block align-text-top" style="height: 75px;">
+                </a>
+                <button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#fixedNav">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="fixedNav">
+                    <ul class="navbar-nav ms-auto">
+                        <li  class="nav-item"><a class="nav-link active" href="">Home</a></li>
+                        <li class="nav-item dropdown">
+                            <a href="#" class="nav-link dropdown-toggle"  
+                            data-bs-toggle="dropdown" data-bs-target="#navDropdown" role="button">Services</a>
+                            <ul class="dropdown-menu" id="navDropdown">
+                                <li class="dropdown-item">Web Design</li>
+                                <li class="dropdown-item">Development</li>
+                                <li class="dropdown-divider"></li>
+                                <li class="dropdown-item">Support</li>
+                            </ul>
+                        </li>
+                        <li class="nav-item"><a href="#" class="nav-link">About</a></li>
+                        <li class="nav-item"><a href="#" class="nav-link">Contact</a></li>
+                    </ul>
+                    <form action="" class="d-flex">
+                        <input type="text" placeholder="Search..." class="form-control me-2">
+                        <button class="btn btn-light">Search</button>
+                    </form>
+                </div>
+            </div>
+        </nav>
+
+        <h3 class="mb-4">6. Sticky Navbar</h3>
+        <p class="small text-muted">Scroll down, this sticks when you reach it. </p>
+        <nav class="navbar navbar-expand-lg navbar-warning sticky-top bg-warning mb-4 mt-4">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="">
+                    <img src="logo.jpg" alt="" class="d-inline-block align-text-top" style="height: 75px;">
+                </a>
+                <button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#stickyNav">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="stickyNav">
+                    <ul class="navbar-nav ms-auto">
+                        <li  class="nav-item"><a class="nav-link active" href="">Home</a></li>
+                        <li class="nav-item dropdown">
+                            <a href="#" class="nav-link dropdown-toggle"  
+                            data-bs-toggle="dropdown" data-bs-target="#navDropdown" role="button">Services</a>
+                            <ul class="dropdown-menu" id="navDropdown">
+                                <li class="dropdown-item">Web Design</li>
+                                <li class="dropdown-item">Development</li>
+                                <li class="dropdown-divider"></li>
+                                <li class="dropdown-item">Support</li>
+                            </ul>
+                        </li>
+                        <li class="nav-item"><a href="#" class="nav-link">About</a></li>
+                        <li class="nav-item"><a href="#" class="nav-link">Contact</a></li>
+                    </ul>
+                    <form action="" class="d-flex">
+                        <input type="text" placeholder="Search..." class="form-control me-2">
+                        <button class="btn btn-light">Search</button>
+                    </form>
+                </div>
+            </div>
+        </nav>
+
+        <div style="height: 1500px;"></div>
+    </div>
+
+
+    <script src="bootstrap-5.3.8-dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>

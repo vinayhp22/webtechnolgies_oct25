@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modals in Bootstrap</title>
+    <link rel="stylesheet" href="bootstrap-5.3.8-dist/css/bootstrap.min.css">
+</head>
+
+<body class="p-4">
+    <h1 class="mb-4">Bootstrap Modals</h1>
+
+    <h4 class="mb-4">1. Basic Modal</h4>
+    <button class="btn btn-primary mb-2" data-bs-toggle="modal" data-bs-target="#basicModal">Basic Modal</button>
+    <div class="modal show" id="basicModal" tabindex="-1">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Basic Modal</h5>
+                    <button class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">This is modal body.</div>
+                <div class="modal-footer">
+                    <button class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <h4 class="mb-4">2. Modal Sizes</h4>
+    <button class="btn btn-primary mb-2" data-bs-toggle="modal" data-bs-target="#largeModal">Large Modal</button>
+    <button class="btn btn-success mb-2" data-bs-toggle="modal" data-bs-target="#defaultModal">Default-size
+        Modal</button>
+    <button class="btn btn-warning mb-2" data-bs-toggle="modal" data-bs-target="#smallModal">Small Modal</button>
+    <div class="modal fade" id="largeModal" tabindex="-1">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Large Modal</h5>
+                    <button class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">This is modal Large(modal-lg).</div>
+                <div class="modal-footer">
+                    <button class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" id="defaultModal" tabindex="-1">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Default-size Modal</h5>
+                    <button class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">This is default modal with medium size.</div>
+                <div class="modal-footer">
+                    <button class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" id="smallModal" tabindex="-1">
+        <div class="modal-dialog modal-sm">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Small Modal</h5>
+                    <button class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">This is modal small(modal-sm).</div>
+                <div class="modal-footer">
+                    <button class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <h4 class="mb-4">3. Centered Modal</h4>
+    <button class="btn btn-primary mb-2" data-bs-toggle="modal" data-bs-target="#centeredModal">Center Modal</button>
+    <div class="modal fade" id="centeredModal" tabindex="-1">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Centered Modal</h5>
+                    <button class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">This is modal at centre of the screen.</div>
+                <div class="modal-footer">
+                    <button class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <h4 class="mb-4">4. Scollable Modal</h4>
+    <button class="btn btn-primary mb-2" data-bs-toggle="modal" data-bs-target="#scrollableModal">Scrollable Modal</button>
+    <div class="modal fade" id="scrollableModal" tabindex="-1">
+        <div class="modal-dialog modal-dialog-scrollable">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Scrollable Modal</h5>
+                    <button class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <p>VTech Integrated Solutions is a parallel education firm that provides engineering graduates
+                        across India with career-oriented mentorship. VTech candidates are happy to share that we are
+                        Best Training and Placement Institute in Bangalore. Placing and training students since year
+                        2000, with track record. We are best training and placement institutes in Bangalore. Even during
+                        corona pandemic period, we were able to place candidates without any hassle.
+                    </p>
+                    <p>
+                        We are Best training institute with placement in Bangalore. We serve as a Finishing School for
+                        students, providing them with career-oriented coaching that is focused, dedicated, and
+                        individualised to help them achieve their goals. We are leaders in the field of IT education,
+                        having given thousands of students a head start in their careers. Hence we are called as “Best
+                        placement consultancy in Bangalore” We value our students’, parents’, and
+                        colleges’/universities’ trust in Karnataka, Andhra Pradesh, Telangana, Tamil Nadu, Kerala,
+                        Maharashtra, and Orissa, among other states.
+                    </p>
+                    <p>VTech Integrated Solutions is a parallel education firm that provides engineering graduates
+                        across India with career-oriented mentorship. VTech candidates are happy to share that we are
+                        Best Training and Placement Institute in Bangalore. Placing and training students since year
+                        2000, with track record. We are best training and placement institutes in Bangalore. Even during
+                        corona pandemic period, we were able to place candidates without any hassle.
+                    </p>
+                    <p>
+                        We are Best training institute with placement in Bangalore. We serve as a Finishing School for
+                        students, providing them with career-oriented coaching that is focused, dedicated, and
+                        individualised to help them achieve their goals. We are leaders in the field of IT education,
+                        having given thousands of students a head start in their careers. Hence we are called as “Best
+                        placement consultancy in Bangalore” We value our students’, parents’, and
+                        colleges’/universities’ trust in Karnataka, Andhra Pradesh, Telangana, Tamil Nadu, Kerala,
+                        Maharashtra, and Orissa, among other states.
+                    </p>
+                </div>
+                <div class="modal-footer">
+                    <button class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <h4>5. Form Inside the Modal</h4>
+    <button class="btn btn-primary mb-2" data-bs-toggle="modal" data-bs-target="#formModal">Fill the Form</button>
+    <div class="modal fade" id="formModal" tabindex="-1">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title">Login</h1>
+                    <button class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <form action="">
+                        <div class="mb-3">
+                            <label for="" class="form-label">Email:</label>
+                            <input type="email" class="form-control">
+                        </div>
+                        <div class="mb-3">
+                            <label for="" class="form-label">Password:</label>
+                            <input type="password" class="form-control">
+                        </div>
+                        <button class="btn btn-primary w-100">Login</button>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button class="btn btn-info" data-bs-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <h4 class="mb-4">6. Static Modal</h4>
+    <button class="btn btn-primary mb-2" data-bs-toggle="modal" data-bs-target="#staticModal">Static Modal</button>
+    <div class="modal fade" id="staticModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Static Modal</h5>
+                    <button class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">This modal cannot close using ESC or pressiong Outside.</div>
+                <div class="modal-footer">
+                    <button class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <h4 class="mb-4">7. Full Screen Modal</h4>
+    <button class="btn btn-primary mb-2" data-bs-toggle="modal" data-bs-target="#fullModal">Full Screen Modal</button>
+    <div class="modal fade" id="fullModal" tabindex="-1">
+        <div class="modal-dialog modal-fullscreen">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Full Screen Modal</h5>
+                    <button class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">This is a Full Screen modal.</div>
+                <div class="modal-footer">
+                    <button class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="bootstrap-5.3.8-dist/js/bootstrap.bundle.js"></script>
+</body>
+
+</html>

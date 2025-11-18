@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Forms In Bootstrap</title>
+    <link rel="stylesheet" href="bootstrap-5.3.8-dist/css/bootstrap.min.css">
+</head>
+
+<body class="p-4">
+    <h1>Forms In Bootstrap</h1>
+
+    <h3>1. Basic Form</h3>
+    <form class="p-3 border mb-4" action="">
+        <div class="mb-3">
+            <label for="email" class="form-label">Email Address</label>
+            <input type="email" class="form-control" placeholder="Enter Email">
+        </div>
+        <div class="mb-3">
+            <label for="passowrd" class="form-label">Password</label>
+            <input type="password" class="form-control" placeholder="Enter Password">
+        </div>
+        <button class="btn btn-primary">Login</button>
+    </form>
+
+
+    <h3>2. Checkboxes and Radio buttons</h3>
+    <form class="p-3 border mb-4" action="">
+        <div class="mb-3">
+            <label for="name" class="form-label">Name</label>
+            <input type="name" class="form-control" placeholder="Enter Name">
+        </div>
+        <div class="mb-3">
+            <label for="email" class="form-label">Email</label>
+            <input type="email" class="form-control" placeholder="Enter Email">
+        </div>
+        <div class="mb-3 form-check">
+            <input type="checkbox" name="subscribe" class="form-check-input">
+            <label for="subscribe" class="form-check-label">Subscribe to newsletters.</label>
+        </div>
+        <div class="row ps-4">
+            <div class="mb-3 form-check col-1">
+                <input type="radio" name="gender" id="male" class="form-check-input" checked>
+                <label for="male" class="form-check-label">Male</label>
+            </div>
+            <div class="mb-3 form-check col-1">
+                <input type="radio" name="gender" id="female" class="form-check-input">
+                <label for="female" class="form-check-label">Female</label>
+            </div>
+        </div>
+        <button class="btn btn-primary">Login</button>
+    </form>
+
+    <h3>3. Dropdowns</h3>
+    <form class="p-3 border mb-4 w-25 bg-warning" action="">
+        <div class="mb-3">
+            <label for="name" class="form-label">Name</label>
+            <input type="name" class="form-control" placeholder="Enter Email">
+        </div>
+        <div class="mb-3">
+            <label for="email" class="form-label">Email</label>
+            <input type="email" class="form-control" placeholder="Enter Password">
+        </div>
+        <div class="mb-3 form-check">
+            <input type="checkbox" name="subscribe" class="form-check-input">
+            <label for="subscribe" class="form-check-label">Subscribe to newsletters.</label>
+        </div>
+        <div class="row ps-4 mb-3">
+            <div class="form-check col-6">
+                <input type="radio" name="gender" id="male" class="form-check-input" checked>
+                <label for="male" class="form-check-label">Male</label>
+            </div>
+            <div class="form-check col-6">
+                <input type="radio" name="gender" id="female" class="form-check-input">
+                <label for="female" class="form-check-label">Female</label>
+            </div>
+        </div>
+
+        <div class="mb-3">
+            <label for="course" class="form-label">Select a Course</label>
+            <select name="course" id="" class="form-select">
+                <option value="" selected>Select One Course</option>
+                <option value="Java Full Stack">Java Full Stack</option>
+                <option value="Python Full Stack">Python Full Stack</option>
+                <option value="Data Analytics">Data Analytics</option>
+                <option value="Data Science">Data Science</option>
+                <option value="AIML">AI ML</option>
+            </select>
+        </div>
+        <button class="btn btn-primary">Login</button>
+    </form>
+
+    <h4>4. Input Groups</h4>
+    <form action="" class="p-3 border w-25 bg-dark mb-4">
+        <div class="input-group mb-3">
+            <span class="input-group-text">@</span>
+            <input type="text" class="form-control" placeholder="username">
+        </div>
+        <div class="input-group mb-3">
+            <input type="text" class="form-control" placeholder="email">
+            <span class="input-group-text">@gmail.com</span>
+        </div>
+        <div class="input-group mb-3">
+            <input type="search" class="form-control" placeholder="Search...">
+            <button class="btn btn-outline-secondary">Search</button>
+        </div>
+    </form>
+
+    <h4>5. Floating Labels</h4>
+    <form class="p-3 border mb-4 w-25">
+        <div class="form-floating mb-3">
+            <input type="email" name="floatingEmail" placeholder="name@example.com" class="form-control">
+            <label for="floatingEmail">Email address</label>
+        </div>
+        <div class="form-floating mb-4">
+            <input type="password" name="floatingPassword" placeholder="passowrd" class="form-control">
+            <label for="floatingPassword">Password</label>
+        </div>
+        <button class="btn btn-primary">Login</button>
+    </form>
+
+    <h5 class="mb-4">6. Inline Form</h5>
+    <form class="row g-3 border p-3 mb-4">
+        <div class="mb-3 col-auto">
+            <label for="email" class="col-form-label">Email Address</label>
+        </div>
+        <div class="mb-3 col-auto">
+            <input type="email" class="form-control" placeholder="Enter Email">
+        </div>
+        <div class="mb-3 col-auto">
+            <label for="passowrd" class="col-form-label">Password</label>
+        </div>
+        <div class="mb-3 col-auto">
+            <input type="password" class="form-control" placeholder="Enter Password">
+        </div>
+        <div class="col-auto">
+            <button class="btn btn-primary ">Login</button>
+        </div>
+    </form>
+
+    <h5 class="mb-4">7. Disable and Readonly Form</h5>
+    <form class="row g-3 border p-3 mb-4">
+        <div class="mb-3 col-auto">
+            <label for="email" class="col-form-label">Email Address</label>
+        </div>
+        <div class="mb-3 col-auto">
+            <input type="email" class="form-control" placeholder="Enter Email" value="example@gmail.com" readonly>
+        </div>
+        <div class="mb-3 col-auto">
+            <label for="name" class="col-form-label">Name</label>
+        </div>
+        <div class="mb-3 col-auto">
+            <input type="text" class="form-control" placeholder="Enter Name" disabled value="Your Name">
+        </div>
+        <div class="col-auto">
+            <button class="btn btn-primary ">Login</button>
+        </div>
+    </form>
+
+    <h5>8. Form with Grid System</h5>
+    <form class="p-3 border mb-4">
+        <div class="row mb-3">
+            <div class="col">
+                <input type="text" class="form-control" placeholder="First Name">
+            </div>
+            <div class="col">
+                <input type="text" class="form-control" placeholder="Last Name">
+            </div>
+        </div>
+        <div>
+            <input type="email" class="form-control" placeholder="Email">
+        </div>
+        <button class="btn btn-primary">Submit</button>
+    </form>
+
+    <h5>9. Form Validation</h5>
+    <form class="p-3 border mb-4">
+        <div class="mb-3">
+            <input type="text" class="form-control is-valid" placeholder="Valid Input">
+            <div class="valid-feedback">Looks Good!</div>
+        </div>
+        <div class="mb-3">
+            <input type="text" class="form-control is-invalid" placeholder="Invalid Input">
+            <div class="valid-feedback">Looks Good!</div>
+            <div class="invalid-feedback">Please provide a valid value</div>
+        </div>
+        <button class="btn btn-warning">Validate</button>
+    </form>
+</body>
+
+</html>

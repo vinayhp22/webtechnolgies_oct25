@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Collapse in Bootstrap</title>
+    <link rel="stylesheet" href="bootstrap-5.3.8-dist/css/bootstrap.min.css">
+</head>
+
+<body class="p-4">
+    <h1 class="mb-4">Collapse in Bootstrap</h1>
+
+    <h4>1. Basic Collapse</h4>
+    <p>
+        <a class="btn btn-info" data-bs-toggle="collapse" href="#collapseBasic">Show/Hide Content</a>
+    </p>
+    <div class="collapse" id="collapseBasic">
+        <div class="card card-body">
+            This content can be shown or hidden with a click...
+        </div>
+    </div>
+
+    <h4>2. Collapse Trigged by Button Button</h4>
+    <button class="btn btn-primary mb-4" type="button" data-bs-toggle="collapse" data-bs-target="#collapseBtn">
+        Toggle Content
+    </button>
+    <div class="collapse mb-2" id="collapseBtn">
+        <div class="card card-body">
+            Collapsed content trigged by button.
+        </div>
+    </div>
+
+    <h4>3. Multiple collapse targets</h4>
+    <p>
+        <a class="btn btn-success me-2" data-bs-toggle="collapse" href="#multipleCollapse1">Toggle First</a>
+
+        <button class="btn btn-warning" data-bs-toggle="collapse" data-bs-target=".multi-collapse">
+            Toggle Both
+        </button>
+    </p>
+    <div class="row">
+        <div class="col">
+            <div class="collapse multi-collapse" id="multipleCollapse1">
+                <div class="card card-body">
+                    First Collapsible content
+                </div>
+            </div>
+        </div>
+        <div class="col">
+            <div class="collapse multi-collapse">
+                <div class="card card-body">
+                    Second Collapsible content
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <h4 class="mb-4">4. Horizontal Collapse</h4>
+    <p>
+        <a class="btn btn-dark" data-bs-toggle="collapse" href="#horizontalCollapse">Toggle Horizontal Collapse</a>
+    </p>
+    <div style="height: 120px;">
+        <div class="collapse collapse-horizontal" id="horizontalCollapse">
+            <div class="card card-body" style="width: 300px;">
+                This is Horizontally collapsing content...
+            </div>
+        </div>
+    </div>
+
+
+    <h4>5. Accordion (Advanced Collapse)</h4>
+    <div class="accordion" id="accordionExample">
+        <div class="accordion-item">
+            <h2 class="accordion-header">
+                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne">
+                    Question 1: What is Bootstrap Collapse?
+                </button>
+            </h2>
+            <div class="accordion-collapse collapse show" id="collapseOne" data-bs-parent="accordionExample">
+                <div class="accordion-body">
+                    Collapse is a component to toggle content visibility in Bootstrap.
+                </div>
+            </div>
+        </div>
+        <div class="accordion-item">
+            <h2 class="accordion-header">
+                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo">
+                    Question 2: Where is Collapse used?
+                </button>
+            </h2>
+            <div class="accordion-collapse collapse" id="collapseTwo" data-bs-parent="accordionExample">
+                <div class="accordion-body">
+                    It is widely used in FAQs, menus, and sidebars.
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="bootstrap-5.3.8-dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>
