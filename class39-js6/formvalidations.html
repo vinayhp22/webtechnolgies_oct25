@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Validations</title>
+</head>
+<body>
+
+    <h1>Form Validations</h1>
+    <form action="" onsubmit="return formValidations()">
+        <label for="name">Name: </label>
+        <input type="text" name="name" id="name" placeholder="Enter the name"> <br>
+        <label for="email">Email: </label>
+        <input type="text" name="email" id="email" placeholder="Enter the email"> <br>
+        <label for="mobile">Mobile: </label>
+        <input type="text" name="mobile" id="mobile" placeholder="Enter the mobile"> <br>
+        <label for="age">Age: </label>
+        <input type="text" name="age" id="age" placeholder="Enter your age"> <br>
+        <input type="submit" value="submit"> 
+    </form>
+    
+    <script>
+        function formValidations(){
+            let name = document.getElementById("name").value;
+            let email = document.getElementById("email").value;
+            let mobile = document.getElementById("mobile").value;
+            let age = document.getElementById("age").value;
+            if(name == ''){
+                alert("Name shouldn't be empty");
+                return false;
+            }
+            
+            let nameRegex = /^[a-zA-Z\s]+$/;
+            if(!name.match(nameRegex)){
+                alert("Name should contains only Alphabets and spaces");
+                return false;
+            }
+
+            if(email == ''){
+                alert("Email shouldn't be empty");
+                return false;
+            }
+            let emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+            if(!email.match(emailRegex)){
+                alert("Please correct email with format like \"example@company.com\"  !!!!");
+                return false;
+            }
+            // let mobileReg = /^\d+$/;
+            let mobileReg = /^[0-9]{10}$/; 
+            if(!mobile.match(mobileReg)){
+                alert("Invalid Mobile number");
+                return false;
+            }
+            if(mobile == ''){
+                alert("Mobile shouldn't be empty");
+                return false;
+            }
+            if(isNaN(age) || age == ""){
+                alert("Please enter the correct age!!!");
+                return false;
+            }
+            if(age<18){
+                alert("You're not eligible, you must atleast 18 years old...")
+                return false;
+            }
+
+            return true;
+        }
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS Timers</title>
+</head>
+<body>
+    <h1>JS Timers</h1>
+    <p>1. setTimeout() - executes only one time after a specific time(in miliseconds)</p>
+    <button onclick="callMethod1()">setTimeout()</button>
+    <button id="method1">setTimeout()</button>
+    <p>2. setInterval() - executes till we call clearInterval() in every specific time(in miliseconds)</p>
+    <button onclick="callMethod2()">setInterval()</button>
+    <button id="method2">setInterval()</button>
+    <script>
+        function callMethod1() {
+            console.log("Start");
+            setTimeout(() => {
+                console.log("Hello after 3 seconds");
+            }, 3000);
+            console.log("End");
+        }
+
+        function callMethod2() {
+            let count = 1;
+            let timer = setInterval(() => {
+                console.log("Count: " + count);
+                count++;
+                if (count > 5) {
+                    clearInterval(timer);
+                }
+            }, 2000);
+        }
+
+        document.getElementById("method1").addEventListener("click", function(){
+            console.log("Start");
+            setTimeout(() => {
+                console.log("Hello after 3 seconds");
+            }, 3000);
+            console.log("End");
+        })
+
+        document.getElementById("method2").addEventListener("click", function(){
+            let count = 1;
+            let timer = setInterval(() => {
+                console.log("Count: " + count);
+                count++;
+                if (count > 5) {
+                    clearInterval(timer);
+                }
+            }, 2000);
+        })
+
+    </script>
+</body>
+
+</html>

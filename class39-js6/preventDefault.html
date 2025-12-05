@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Preventing Default actions</title>
+</head>
+<body>
+    <h1>Preventing Default actions</h1>
+    <form action="" id="myform">
+        <input type="text" name="name"  placeholder="Enter the same">
+        <input type="number" name="age" placeholder="Enter the age">
+        <input type="submit" value="Submit">
+    </form>
+
+    <script>
+        document.getElementById("myform").addEventListener("submit", function(event){
+            event.preventDefault();
+            alert("Form Submitted Successfully!!!!");
+        })
+    </script>
+</body>
+</html>

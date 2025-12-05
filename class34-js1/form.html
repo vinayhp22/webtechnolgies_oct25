@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Validation</title>
+</head>
+<body>
+    <form action="">
+        <input type="text" name="name" id="name" placeholder="Enter the name">
+        <input type="number" name="age" id="age" placeholder="Enter the age">
+        <input type="submit" onclick="checkAge()">
+    </form>
+
+    <button id="btn">Click Me</button>
+
+    <script>
+        function checkAge(){
+            let age = document.getElementById("age").value;
+            if(age<18){
+                alert("Age should be greater than and equals 18");
+            } else {
+                alert("Access Granted");
+            }
+        }
+
+        document.getElementById("btn").addEventListener("click", function(){
+            alert("Button clicked!!!");
+        })
+    </script>
+</body>
+</html>

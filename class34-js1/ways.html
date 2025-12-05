@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ways to Add JS to Webpages</title>
+</head>
+<body>
+    <h1>Ways to Add JS to Webpages</h1>
+    <h3>1. Inline JS</h3>
+        <button onclick="alert('Hello, Welcome to JS, Iam Inline JS!!!')">Click Me</button>
+        <button onmouseover="alert('Mouse hovered me!!!!')">Hover Me</button>
+        <input onchange="alert('Input Changed!!!')" placeholder="Change me....">
+
+        <h5>Advantages of Inline JS</h5>
+        <p>Simple & quick for small functionality</p>
+        <p>Easy to test short code snippets.</p>
+
+        <h5>Disadvantages of Inline JS</h5>
+        <p>Not maintainable because its mixing both HTML & JS</p>
+        <p>Difficult to reuse the same logic for multiple elements</p>
+        <p>Considered bad practice in modern web development.</p>
+
+    <h3>2. Internal JS</h3>
+    <p>Just reload!!!, you'll get the welcome message</p>
+        <h5>Advantages of Internal JS</h5>
+        <p>Keeps JS separate from HTML elements</p>
+        <p>Better than Inline JS for larger scripts</p>
+        <p>Useful when we only have one HTML file/page.</p>
+    
+        <h5>Disadvantages of Internal JS</h5>
+        <p>if the HTML grows big, having CSS, and JS all in the same file gets cluttered(tough maintainable)</p>
+        <p>Code is not reusable across multiple pages.</p>
+
+    <h3>3. External JS - i.e., separate .js file</h3>
+        <h5>Advantages of External JS</h5>
+        <p>Best Practice in modern web development</p>
+        <p>Clean separation between HTML, CSS and JS(Structure, Style, behaviour)</p>
+        <p>Easier to maintain and debug</p>
+        <p>Can be reused across multiple web pages by linking the same .js file</p>
+        <p>Improves page loading speed(browser can cache that .js file)</p>
+
+        <h5>Disadvantages of External JS</h5>
+        <p>Requires multiple files..</p>
+        <p>If the External .js file is large, then again it may slow down first page load itselt.(but this can be fixed using async/defer)</p>
+
+    <script>
+        alert("Hello, Welcome to JS, Im Internal JS")
+    </script>
+    <script src="script.js"></script>
+</body>
+</html>

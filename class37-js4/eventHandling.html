@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Handling in JS</title>
+</head>
+<body>
+    <h1>Event Handling in JS</h1>
+    <p>An event is a action that performed by a user(click, hover, change, typing)</p>
+    <button onclick="alert('Button clicked')">Click Me</button>
+    <button onmouseover="this.style.color='red'" onmousedown="this.style.color='green'">Hover on Me</button>
+    <input type="text" onchange="alert('value changed')">
+
+    <p>others: onkeydown, onkeyup, onload, onsubmit, ondbclick</p>
+
+    <h3>Inline events vs Event Listners</h3>
+    <h5>i). Inline Events</h5>
+    <p>Written directly in HTML(inside tag)</p>
+    <p>Not recomended in modern coding(mixes HTML with JS)</p>
+    <button onclick="sayHello()" >Click me to greet</button>
+
+    <h5>ii). Event Listeners</h5>
+    <p>Modern Way -> keeps HTML, JS separate</p>
+    <p>Use addEventListener() method</p>
+    <button id="btn">Click Me</button>
+
+    <h6>Advantages of Event Listeners</h6>
+    <p>1. Can attach multiple events to the same element</p>
+    <p>Keeps HTML & JS separate(clean code)</p>
+    <p>More flexible & maintainable</p>
+
+    <script>
+        let sayHello = () => alert('Hello students!!!');
+
+        document.getElementById('btn').addEventListener("click", function(){
+            alert("Hello from Event Listner");
+        })
+        document.getElementById('btn').addEventListener("mouseover", function(){
+            this.style.color='red';
+        })
+        document.getElementById('btn').addEventListener("mouseout", function(){
+            this.style.color='black';
+        })
+    </script>
+</body>
+</html>

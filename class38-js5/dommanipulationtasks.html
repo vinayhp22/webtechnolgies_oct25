@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM Manipulation Tasks</title>
+</head>
+<body>
+    <h1>DOM Manipulation Tasks</h1>
+
+    <h3>Q1. Create a button that changes the background color of the paragraph.</h3>
+    <button id="btn">Change the color</button>
+    <button onclick="changeColor()">Change the color using inline JS</button>
+    <p id="para">
+        VTech Integrated Solutions is a parallel education firm that provides engineering graduates across India with career-oriented mentorship. VTech candidates are happy to share that we are Best Training and Placement Institute in Bangalore. Placing and training students since year 2000, with track record. We are best training and placement institutes in Bangalore. Even during corona pandemic period, we were able to place candidates without any hassle. 
+        
+    </p>
+    <h3> Q2. Add a new list item(li tag) dynamically when a button is clicked.</h3>
+    <ul id="list">
+        <li>Item 1</li>
+        <li>Item 2</li>
+    </ul>
+    <button id="addlistbtn">Click to add</button>
+    <hr>
+    <h3> Q3. Change the text of a heading when users hovers on it.</h3>
+    <h2 id="headingHover">Hover me</h2>
+    <script>
+        // Task 1
+        document.getElementById("btn").addEventListener("click", function(){
+            document.getElementById("para").style.backgroundColor = "red";
+        })
+
+        function changeColor() {
+            document.getElementById("para").style.backgroundColor = "blue";
+        }
+
+        // Task 2
+        document.getElementById("addlistbtn").addEventListener("click", function(){
+            let ul = document.getElementById("list");
+            let li = document.createElement("li");
+            li.innerText = "New Item - "+(ul.children.length+1);
+            ul.append(li);
+        })
+
+        // Task 3
+        let heading = document.getElementById("headingHover");
+        document.getElementById("headingHover").addEventListener("mouseover", function(){
+            heading.innerText = "You Hovered Me!!!!";
+        })
+        document.getElementById("headingHover").addEventListener("mouseout", function(){
+            heading.innerText = "Hover me";
+        })
+
+    </script>
+</body>
+</html>

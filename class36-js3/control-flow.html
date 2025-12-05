@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Control Flow Statements in JS</title>
+</head>
+<body>
+    <h1>Control Flow Statements in JS</h1>
+    <h3>1. if, else, else if</h3>
+        <!-- if(condition1){
+                // code
+            } else if(condition2){
+                //code
+            } else {
+                //code
+            } -->
+    <h3>2. switch statements</h3>
+        <!-- switch(expression){
+                case value1 : { 
+                        // code
+                        break;
+                    }
+                case value2 : { 
+                        // code
+                        break;
+                    }
+                case value3 : { 
+                        // code
+                        break;
+                    }
+                default : { 
+                        // code
+                    }
+            } -->
+
+    <h3>3. Loops: for, while, do-while</h3>
+    <p>We need loops to perform same code multiple times</p>
+    <h5>a. For Loop</h5>
+        <p>When we don't know no. of loops/iterations</p>
+        <!-- for(initialization; condition; increment/decrement){
+                //code
+            } -->
+    <h5>b. while Loop</h5>
+        <p>When we know no. of loops</p>
+        <!-- while(condition){
+                //code
+            } -->
+    <h5>c. do-while Loop</h5>
+        <p>When we know no. of loops & if the condition is false then also perform atlest once</p>
+        <!-- do{
+                //code
+            }while(condition) -->
+
+    <script>
+        {
+            //if, else, else if 
+            //Example:
+            let marks = 85;
+            if(marks> 90){ // false
+                console.log("Grade - A+")
+            } else if(marks > 60){ // true
+                console.log("Grade - A")
+            } else if(marks > 35){
+                console.log("Grade - B")
+            } else {
+                console.log("Failed")
+            }
+
+            // if atm pin then give access or deny
+            let pin = 1234;
+            let enteredPin = 1234;
+            if(pin==enteredPin){
+                console.log("Access Granted: "+enteredPin)
+            } else {
+                console.log("Access Denied!!! "+enteredPin)
+            }
+        }
+        {
+            // switch statements
+            let day = 11;
+            switch(day){
+                case 1 : {
+                    console.log("Sunday");
+                    break;
+                }
+                case 2 : {
+                    console.log("Monday");
+                    break;
+                }
+                case 3 : {
+                    console.log("Tuesday");
+                    break;
+                }
+                case 4 : {
+                    console.log("Wednesday");
+                    break;
+                }
+                case 5 : {
+                    console.log("Thursday");
+                    break;
+                }
+                case 6 : {
+                    console.log("Friday");
+                    break;
+                }
+                case 7 : {
+                    console.log("Saturday");
+                    break;
+                }
+                default : {
+                    console.log("Invalid Day");
+                }
+            }
+        }
+        {
+            //for loop
+            for(i = 0; i < 5; i++){
+                console.log("Numbers: "+i);
+            }
+            for(i = 5; i > 0; i--){
+                console.log("Count: "+i);
+            }
+        }
+        {
+            //while loop
+            let i = 0;
+            while(i<5){
+                console.log("Numbers: "+i);
+                i++;
+            }
+
+            i = 5
+            while(i>0){
+                console.log("Count: "+i);
+                i--;
+            }
+        }
+        {
+            //do - while loop
+            let i = 5
+            do{
+                console.log("Numbers: "+i);
+            }while(i<5);
+            //Here, condition is false, then also
+            // it exicutes one time 
+
+            i = 0;
+            do {
+                console.log("Count: "+i);
+                i++;
+            } while(i<5);
+            i = 5;
+            do {
+                console.log("Num: "+i);
+                i--;
+            } while(i>0);
+        }
+
+        {
+            // Can you print numbers from 1 to 10
+            //1. using for loop
+            //2. using while loop
+            //3. usinh do-while loop
+        }
+        {
+            console.log("1. using for loop");
+            for(let i = 1; i <=10; i++){
+                console.log(i);
+            }
+        }
+        {
+            console.log("2. using while loop");
+            let i = 1;
+            while(i<=10){
+                console.log(i);
+                i++;
+            }
+        }
+        {
+            console.log("3. using do-while loop");
+            let i = 1;
+            do{
+                console.log(i);
+                i++;
+            }while(i<=10)
+        }
+        {
+            // Print multiplication of 10 using for loop
+            for(let i = 1; i <= 10; i++){
+                console.log(`5 x ${i} = ${5*i}`); //template literals
+                //${ } - string interpolation
+            }
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Datatypes in JS</title>
+</head>
+<body>
+    <h1>Datatypes in JS</h1>
+    <p>Datatype = tells us what is the type of data that a variable can hold.</p>
+    <p>Java - statically typed language</p>
+    <p>Python - dynamically typed language</p>
+
+    <b>JS is dynamically typed language - data type determined at runtime.</b>
+
+    <h3>Data Types - Types</h3>
+    <h4>1. Primitive Data Types - predefined data types</h4>
+            <p>1. String</p>
+            <p>2. Number</p>
+            <p>3. Boolean</p>
+            <p>4. Undefined - Declared but not assigned</p>
+            <p>5. Null - intentional empty value</p>
+            <p>6. Symbol - unique identifier</p>
+            <p>7. BigInt(ES2020) - very large Integers</p>
+
+
+    <h4>2. Non-primitive Data types - not predefined</h4>
+        <p>1. Objects</p>
+        <p>2. Arrays</p>
+
+    <h3>Primitive Data types</h3>
+        <p>Stores value directly in memory</p>
+        <p>Immutable - can't change the data</p>
+        <p>Ex: Strings, numbers etc</p>
+
+    <h3>Non-Primitive Data types or Reference data types</h3>
+        <p>Stores only references(memory address) in memory</p>
+        <p>Muttable - can change the data</p>
+        <p>Ex: Objects, Arrays</p>
+    <script>
+        {
+            //Dynamically Typed Language
+            let x = 20; // Integer
+            console.log(x)
+            x = "Vtech"; // String
+            console.log(x)
+
+            //1. String
+            let name = "Rahul";
+            let college = 'VTU';
+
+            //2. number
+            let age = 35;
+
+            //3. Boolean
+            let isClassIsThere = true;
+            let AreWePrepared = false;
+
+            //4. Undefined
+            let date;
+            console.log(date); //undefined
+            var day;
+            console.log(day); //undefined
+            // const day; //'const' declarations must be initialized.javascript
+            // console.log(day);
+
+            //5. Null
+            let course = null;
+            console.log(course); // null
+
+            //6. Symbol - ES6(2015)
+            let id1 = 101;
+            let id2 = 101;
+            console.log(id1 == id2); //true
+            var id3 = Symbol(101);
+            var id4 = Symbol(101);
+            console.log(id3 == id4); //false
+
+            //7. BigInt(ES2020) - very large Integers
+            // represent using suffix 'n'
+            let mobile = 29092090927383n;
+            //console.log(mobile + 1); //Uncaught TypeError: Cannot mix BigInt and other types, use explicit conversions
+            console.log(mobile + 1n);
+
+
+            // Non-primitive (Reference Datatypes)
+
+            //1. Objects - (key-value pair)
+            // keys are strings(or symbols), values can be of any type
+            let person = {
+                name : "Sourabh",
+                age : 25,
+                course : "Python Full Stack"
+            }
+
+            //This is also a JSON, used in REST APIs
+            // JSON = Javascript Object Notation
+
+            console.log(person.name);
+            console.log(person.age);
+            console.log(person.course);
+
+            //2. Arrays
+            // indexed based collection of data
+            {
+                let numbers = [10, 20, 30, "Vtech"];
+                console.log(numbers)
+                console.log(numbers[0]) //10
+            }
+        }
+
+        {
+            let x;
+            console.log(x);
+            x = null; // reset
+            console.log(x);
+
+            // logout(resetting login cache)
+            let currentUser = "yeshwant123"
+            currentUser = null
+            console.log(currentUser)
+        }
+
+        {
+            let h1 = "Yeshwanth"; 
+            let h2 = "Yeshwanth"; // both are pointing to same address
+            console.log(h1 == h2); //true
+
+            let e1 = Symbol("Yeshwanth");  // address 
+            let e2 = Symbol("Yeshwanth");  // address
+            console.log(e1 == e2); // false
+        }
+
+        {
+            let mobile = 266828772827826n;
+
+            // var - old way, function scoped 
+            // let - modern way(ES6 - 2015), block scoped
+            // const - modern way(ES6 - 2015), block scoped, constant
+            const  name = "Yeshwant";
+            name = "Arif";
+        }
+    </script>
+</body>
+</html>

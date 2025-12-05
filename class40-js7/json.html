@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JSON - JavaScript Object Notation</title>
+</head>
+<body>
+    <h1>JSON - JavaScript Object Notation</h1>
+    <p>Lightweight format for storing & trasferring data.</p>
+    <p>Mostly used in APIs & configuration files.</p>
+
+    <h4>Syntax Rules: </h4>
+    <p>1. Data is stored like key-value pairs.</p>
+    <p>2. Keys are always double quoted.</p>
+    <p>3. Values can be string, number, boolean, null, object or array.</p>
+
+    <script>
+        let student = {
+            "name": "Rahul",
+            "age" : 25,
+            "isStudent" : true,
+            "skills" : ["Java", "HTML", "CSS", "JS"]
+        }
+        
+
+        //JSON methods
+        //Printing the Object
+        console.log(student); // {name: 'Rahul', age: 25, isStudent: true, skills: Array(4)} - This is an object
+        
+        // JSON.stringify(student) converts object(JSON) to String
+        let jsonStudent = JSON.stringify(student);
+        console.log(jsonStudent); // {"name":"Rahul","age":25,"isStudent":true,"skills":["Java","HTML","CSS","JS"]} - This is String
+
+        // JSON.parse(jsonStudent); - converts String to Object(JSON)
+        let studentFromString = JSON.parse(jsonStudent);
+        console.log(studentFromString); //{name: 'Rahul', age: 25, isStudent: true, skills: Array(4)}
+    </script>
+</body>
+</html>

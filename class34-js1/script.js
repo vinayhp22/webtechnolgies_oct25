@@ -1,0 +1,1 @@
+alert("Welcome To Java Script, This is External JS!!!")

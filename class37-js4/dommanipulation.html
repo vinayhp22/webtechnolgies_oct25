@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM part 2</title>
+</head>
+<body>
+    <h1>1. Change the content of HTML</h1>
+    <h3 id="title">Old Heading</h3>
+    <button onclick="changeHeading()">Click me to change the heading</button>
+    <button id="btn">Click me to change the heading using event listener</button>
+    
+    <h1>2. Change the styling of an element</h1>
+    <p id="para">This is a paragraph</p>
+    <button id="btn1">Click me</button>
+
+    <h1>3. Changing HTML Structure</h1>
+    <div id="container"></div>
+    <button id="btn2">Add Paragraph</button>
+
+    <h4>DOM Manipulation:</h4>
+    <p>DOM Manipulation the process of changing content, style of element, or add/remove an element using docuement objects in th HTML.</p>
+
+    <h6>Why we need DOM Manipulation:</h6>
+    <p>1. Helps to make dynamic, interactive web pages</p>
+    <p>2. Used in form validations, animations, dynamic updates.</p>
+    <p>3. Essential for building modern apps(React, Angular, Vue, Node are all based on DOM Manipulation)</p>
+
+    <h5>Tasks:</h5>
+    <p>1. Create a button that changes the background color of the paragraph.</p>
+    <p>2. Add a new list item(li tag) dynamically when a button is clicked.</p>
+    <p>3. Change the text of a heading when users hovers on it.</p>
+
+    <script>
+        function changeHeading(){
+            document.getElementById("title").innerHTML = "New Heading";
+        }
+        document.getElementById("btn").addEventListener("click", function(){
+            document.getElementById("title").innerHTML = "New Heading";
+        })
+        document.getElementById("btn1").addEventListener("click", function(){
+            document.getElementById("para").style.color = "blue";
+            document.getElementById("para").style.fontSize = "20px";
+        })
+
+        document.getElementById("btn2").addEventListener("click", function(){
+            console.log(document.getElementById("container").innerHTML);
+            document.getElementById("container").innerHTML += "<p>Added new Paragraph!!!</p>";
+                        console.log(document.getElementById("container").innerHTML);
+
+        })
+
+    </script>
+</body>
+</html>

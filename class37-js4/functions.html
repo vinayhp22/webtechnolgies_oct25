@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Function/Method in Javascript</title>
+</head>
+<body>
+    <h1>Function/Method in Javascript</h1>
+    <p>Function is a block of code/statements which performs specific task.</p>
+    <p>Its helps in code reusability, readbility & modalarity</p>
+    <h2>1. Declaring the function:</h2>
+    <p>function function_name(paremeters){
+        //business logic
+    }</p>
+
+    <h2>2. Function Expressions</h2>
+    <p>Functions are stored as a variable.</p>
+    <p>also called Anonynomous function(no name).</p>
+
+    <h2>3. Arrow Functions</h2>
+    <p>Modern Way, introduced in ES6(ESMA Scriot), 2015</p>
+    <p>Best Practice: Use arrow functions for short, simple logic</p>
+
+    <script>
+        // Examples of function declaration
+        function greet(name){
+            console.log("Hello, "+ name);
+        }
+        greet("Rahul");
+
+        function add(x, y){ // x, y -> parameters
+            return x + y;
+        }
+
+        let result = add(10, 20); // 10, 20 -> arguments
+        console.log(result);
+
+        // function expressions
+        let multiply = function(x, y){
+            return x * y;
+        }
+
+        console.log(multiply(10, 2));
+
+        // Arrow Functions
+        let sub = (x, y) => x - y;
+        console.log(sub(10, 5));
+        
+       {
+        //1. write a function for square using arrow functions
+        let square = (x) => x * x;
+        console.log(square(3));
+
+        let power = (x, y) => x**y;
+        //2. Create a function greet() that prints 'Hello JavaScipt!!!' using arrow functions
+        let greet = () => console.log('Hello JavaScipt!!!');
+        greet();
+        //3. Write an arrow function that return an object
+        // {name:"Rahul", age:25}
+        let getUser = () => ({name:"Rahul", age:25});
+        console.log(getUser());
+       }
+    </script>
+</body>
+</html>

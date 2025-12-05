@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Local Storage & Session Storage</title>
+</head>
+<body>
+    <h1>Local Storage & Session Storage</h1>
+    <p>Both are part of the Web Storage API.</p>
+    <p>They allow saving the data in the browser(key-value pair)</p>
+
+    <h3>1. Local Storage: </h3>
+    <p>Data is saved permanently(even after browser was closed)</p>
+    <p>Storage Limit: ~ 5MB</p>
+
+    <h3>2. Session Storage: </h3>
+    <p>Works same like a Local Storage, but Data is cleared when browser closed.</p>
+
+    <script>
+        //1. Local Storage
+        //Saving the data to Browser(local Storage)
+        localStorage.setItem("name", "Vaishak");
+        let user = localStorage.getItem("name");
+        console.log(user); //Vaishak
+
+        localStorage.setItem("name1", "Arpitha");
+        let user1 = localStorage.getItem("name1");
+        console.log(user1); //Arpitha
+
+        localStorage.setItem("My City", "Bengaluru")
+        
+
+        //Removing Data from Local Storage
+        localStorage.removeItem("name1");
+        console.log("After Removing: "+localStorage.getItem("name1"));
+
+        localStorage.removeItem("name");
+        console.log("After Removing: "+localStorage.getItem("name"));
+
+        //2. Session Storage
+        sessionStorage.setItem("Vaishak's city", "Thiruvananthapuram");
+        sessionStorage.setItem("Arpitha's City", "Chikmangaluru");
+
+        console.log(sessionStorage.getItem("Vaishak's city"));
+        console.log(sessionStorage.getItem("Arpitha's City"));
+        console.log("Using Local Storage: "+localStorage.getItem("My City"));
+
+    </script>
+</body>
+</html>

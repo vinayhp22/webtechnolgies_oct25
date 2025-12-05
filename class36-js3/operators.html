@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Operators in JS</title>
+</head>
+<body>
+    <h1>Operators in JS</h1>
+    <h3>1.Arithmatic Operators</h3>
+    <p>+, -, *, /, %, **</p>
+
+    <h3>2. Assignment Operators</h3>
+    <p>=, +=, -=, *=, /=, %=, **=</p>
+
+    <h3>3. Comparision Operators</h3>
+    <p><, <=, >, >=, !=, ==, ===, !==</p>
+
+    <h3>4. Logical Operators</h3>
+    <p>&& , || , !</p>
+    <script>
+        {
+            //Arithmatic Operators
+            let a = 10; b = 2;
+            console.log(a+b); // 12
+            console.log(a-b); //8
+            console.log(a*b); //20
+            console.log(a/b); //5
+            console.log(a%b); //0 - Remainder
+            console.log(a**b); // Power  - 100
+            console.log(10**3); // 1000
+
+            let x = 100;
+            console.log(Math.sqrt(x));
+
+        }
+        {
+            //Assignement operators
+            let x = 100; // assign
+            x += 2; // x = x + 2 add & assign
+            console.log(x); //102
+            x -= 2; // x = x - 2 substract & assign
+            console.log(x); // 100
+            x *= 2; // x = x * 2 multiply & assign
+            console.log(x); // 200
+            x /= 2; // x = x / 2 divide & assign
+            console.log(x); // 100
+            x **= 2; // x = x ** 2 power & assign
+            console.log(x); // 10000
+            console.log("===============")
+        }
+        {
+            //Comparision Operators
+            console.log(10<3); //false
+            console.log(10<=3); //false
+            console.log(10>=3); //true
+            console.log(10>3); //true
+            console.log("===============")
+            console.log(10<10); //false
+            console.log(10<=10); //true
+            console.log(10>=10); //true
+            console.log(10>10); //false
+            console.log("===============")
+
+            console.log(10==10); // true
+            console.log(10=="10"); // true - only checks values(content)
+            console.log(10==="10"); // false - checks values & type 
+            console.log(10=="9");  //false
+            console.log(10=="abc10") //false
+            console.log("===============")
+            console.log(10!=10); // false
+            console.log(10!="10"); // false - only checks values(content)
+            console.log(10!=="10"); // true - checks values & type 
+            console.log(10!="9");  //true
+            console.log(10!="abc10") //true
+            console.log("===============")
+        }
+        {
+            //Logical Operators
+            console.log((10==10 && 10==="10")); // false
+            // true - only if both are true, else false 
+             console.log((10==10 || 10==="10")); //true
+            // false - only if both are false, else true 
+            console.log(!(10==10 || 10==="10")); // false
+            console.log(!(10==10 && 10==="10")); // true
+
+            let age = 20;
+            console.log(age>18 && age<60); // true
+            console.log(age<18 || age>60); // false
+            console.log(!(age>18)); // false
+        }
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arrays in JS</title>
+</head>
+<body>
+    <h1>Arrays in JS</h1>
+    <p>Arrays is a collection of values stored in a single variable.</p>
+    <p>Arrays can hold multiple data types(String, numbers, objects)</p>
+
+    <script>
+        let fruits = ["banana", "Apple", "Grapes"];
+        console.log(fruits);
+        console.log(fruits[0]);
+        console.log(fruits[1]);
+        console.log(fruits[2]);
+        console.log(fruits[10]); //undefined
+
+        let numbers = [10, 20, 30, 40];
+        console.log(numbers);
+
+        let mixed = [1, "Java", 2, "Python", 100, "JS"]
+        console.log(mixed)
+
+        //Pre-defined Methods of Array
+        let inr = [1, 2, 5];
+        console.log(inr);
+        inr.push(10); //Push method: Will add an element to an array at last index.
+        console.log(inr);
+
+        inr.pop(); // Pop method: will remove an element from an array at last index.
+        console.log(inr);
+
+        inr.shift(); //Shift method: will remove an element from an array at first index;
+        console.log(inr);
+
+        inr.unshift(0);
+        console.log(inr); //Unshift method: will add an element to an array at first index;
+
+        //Slice Method: Will return part of a array, without modifying...
+        let languages = ["Tamil", "Kannada", "Telugu", "Tulu", "Malayalam", "Hindi", "Bhojpuri"];
+        let selected = languages.slice(3, 5);
+        console.log(selected); // (2) ['Tulu', 'Malayalam']
+        let selected1 = languages.slice(0, 3);
+        console.log(selected1); // (3) ['Tamil', 'Kannada', 'Telugu']
+        console.log(languages); // (7) ['Tamil', 'Kannada', 'Telugu', 'Tulu', 'Malayalam', 'Hindi', 'Bhojpuri']
+
+        //Splice Method: Will return updated array(adding/deleting) by modifying original array.
+        languages.splice(1,1, "KANNADA"); // (7) ['Tamil', 'KANNADA', 'Telugu', 'Tulu', 'Malayalam', 'Hindi', 'Bhojpuri']
+        console.log(languages)
+        languages.splice(1, 3, "Engish"); // (5) ['Tamil', 'Engish', 'Malayalam', 'Hindi', 'Bhojpuri']
+        console.log(languages)
+
+        languages.splice(0,0, ["Kannda", "Telugu", "Tamil"]); //Nested Array
+        console.log(languages) // (6) [Array(3), 'Tamil', 'Engish', 'Malayalam', 'Hindi', 'Bhojpuri']
+                                // 0: (3) ['Kannda', 'Telugu', 'Tamil']
+        languages.splice(0,0, "Kannda", "Telugu", "Tamil");
+        console.log(languages)
+
+    </script>
+</body>
+</html>

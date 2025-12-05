@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Object in JS</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+</head>
+<body>
+    <h1>Object in JS</h1>
+    <p>Object is a collection of key-value pairs</p>
+    <p>Every object has states(properties) & behaviours(functions)</p>
+    <p>properties: name, age, isTrained</p>
+    <p>behaviours: greet function</p>
+    <p>Keys should be unique, values can be duplicates</p>
+    <script>
+        let humanRobot = {
+            name : "Chitti Robo",
+            nickname : "Chitti Robo",
+            age : 10,
+            isTrained : true,
+            greet : function(){
+                return "Hello, my name is " + this.name;
+            }
+        }
+
+        console.log(humanRobot.name);
+        console.log(humanRobot.age);
+        console.log(humanRobot.isTrained);
+        console.log(humanRobot.greet);
+        //ƒ (){
+                //return "Hello, my name is " + this.name;
+            //}
+        console.log(humanRobot.greet()); // Hello, my name is Chitti Robo
+
+        {
+            //Looping Through Arrays
+            //1. Using for loop
+            let numbers = [10, 20, 30];
+            for(let i = 0; i < numbers.length; i++){
+                console.log("Using For Loop: "+numbers[i]);
+            }
+            
+            // for(int num : numbers) in java foreach
+                //S.O.P(num)
+
+            //2. Using for...of loop(Modern)
+            for(let num of numbers){
+                console.log("Using for...of loop: "+num)
+            }
+        }
+        {
+            // Looping Through Objects
+            console.log(humanRobot)
+            //1. for...in loop
+            for(let key in humanRobot){
+                console.log(key +" - "+ humanRobot[key])
+            }
+
+            //2. Object.keys() /Object.values(); -> return keys or values in array.
+            let keys = Object.keys(humanRobot);
+            console.log(keys);
+
+            let values = Object.values(humanRobot);
+            console.log(values);
+        }
+    </script>
+</body>
+</html>

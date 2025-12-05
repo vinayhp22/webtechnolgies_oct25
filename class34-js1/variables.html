@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Variables</title>
+</head>
+<body>
+    <h1>Variables in JS</h1>
+    <p>A variable is like a container used to store data / values.</p>
+    <p>Instead of using the actual value everywhere, we store it in a variable and reuse it.</p>
+
+    <h2>3 types of variable</h2>
+    <h4>1. var - Old way & Function Scoped</h4>
+        <p>Introduced in early JS</p>
+        <p>Function Scoped(not block-scoped)</p>
+        <p>Can be redeclared & updated</p>
+        <p>Hoisted(moved to top of scope) -> causes bugs</p>
+    <h4>2. let - Modern Way & Block Scoped</h4>
+        <p>Introduced in ES6(ECMAScript - 6) - 2015</p>
+        <p>Block-scoped(not function scoped)</p>
+        <p>can't be redeclared</p>
+        <p>Can be updated</p>
+        <p>Hoisted(moved to top of scope) -> can't able to access without assigning a value because it will go Temporary Dead Zone(TDZ)</p>
+    <h4>3. const - Modern Way, Constant, Block Scoped</h4>
+        <p>Introduced in ES6(ECMAScript - 6) - 2015</p>
+        <p>Block-scoped(not function scoped)</p>
+        <p>can't be redeclared</p>
+        <p>Can't be updated as well</p>
+        <p>Must be initialized at the time of declaration.</p>
+        <p>Hoisted(moved to top of scope) -> can't able to access without assigning a value because it will go Temporary Dead Zone(TDZ)</p>
+
+    <script>
+        console.log(number); // undefined
+        //Function Scoped
+        var name = "Rahul";
+        name = "Sourabh"; // can update
+        console.log("Name: "+ name);
+        var name = "Vaishak"; // Redeclaration is possible
+        console.log("Name1: "+ name);
+        var number;
+        // Block Scoped
+        {
+            //console.log(name); // Cannot access 'name' before initialization
+            let  age = 25;
+            age = 26; // Can udpdate
+            //let age = 30; //ERROR: Cannot redeclare block-scoped variable 'age'.
+
+            var city = "Bengaluru";
+            var city = "Mysuru";
+            let name; // optional to assign at the time of declaration
+        }
+        
+        console.log("City: "+city); // City: Mysuru - Function Scoped
+        // console.log("Age: "+age); //ERROR: Uncaught ReferenceError: age is not defined -> Block Scoped
+
+        {
+            const pi = 3.1416;
+            console.log(pi);
+            // pi = 123.45; // Uncaught TypeError: Assignment to constant variable. -> 
+            //const age; //must assigned at the time of declaration - 'const' declarations must be initialized
+
+        }
+
+        // console.log(pi); //Uncaught ReferenceError: pi is not defined
+
+        {
+            const numbers = [10, 20, 30];
+            console.log(numbers)
+            numbers.push(40);
+            console.log(numbers)
+            //numbers = [50, 60] // Uncaught TypeError: Assignment to constant variable.
+        }
+
+        {
+            var a = 10
+            let b = 20;
+            const c = 30;
+
+            a = 15;
+            b = 25;
+            // c = 35; Uncaught TypeError: Assignment to constant variable.
+
+            console.log(a) // 15
+            console.log(b) // 25
+            console.log(c) // 30
+
+        }
+
+    </script>
+</body>
+</html>

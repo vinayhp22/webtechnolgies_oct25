@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM</title>
+</head>
+<body>
+    <h1>DOM(Document Object Model)</h1>
+    <p>DOM represents the structure of a web page as Tree of objects.</p>
+    <p>When a webpage loads, the browser creates a DOM that JS can interact with.</p>
+    <p>With DOM, we can add, change or remove HTML elements & CSS styles.</p>
+
+    <p>Example:</p>
+    <p>HTML: a blueprint of house</p>
+    <p>DOM: Actual house built from the blueprint(can now be modified, decorated, repainted).</p>
+
+    <h3>Accessing DOM elements</h3>
+    <h4>1. using getElementById()</h4>
+    <h1 id="title">Hello World</h1>
+
+    <h4>2. using getElementByClassName()</h4>
+    <p class="info">First</p>
+    <p class="info">Second</p>
+
+    <h4>3. using querySelector() & querySelectorAll() - recomended(modern & flexible)</h4>
+    <script>
+        let heading = document.getElementById('title');
+        console.log(heading); //<h1 id="title">Hello World</h1>
+        console.log(heading.innerText); //Hello World
+
+        let items = document.getElementsByClassName("info")
+        console.log(items); // its a collection
+        console.log(items[0]); //     <p class="info">First</p>
+        console.log(items[1]);  //    <p class="info">Second</p>
+        console.log(items[0].innerText); //     <First
+        console.log(items[1].innerText);  //    Second
+
+        let first = document.querySelector(".info"); // first matching element
+        console.log(first);
+        console.log(first.innerText);
+
+        let all = document.querySelectorAll(".info"); // all matching elements
+        console.log(all);
+        all.forEach(e1 => console.log(e1.innerText));
+    </script>
+</body>
+</html>
