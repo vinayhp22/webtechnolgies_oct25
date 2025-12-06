@@ -1,0 +1,1232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Form Entries Dashboard (Local Demo)</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- SheetJS for Excel Export -->
+  <script src="https://cdn.jsdelivr.net/npm/xlsx@0.18.5/dist/xlsx.full.min.js"></script>
+
+  <style>
+    :root {
+      --primary: #1d4ed8;
+      --primary-soft: #dbeafe;
+      --primary-dark: #1e3a8a;
+      --bg: #0b1120;
+      --bg-alt: #020617;
+      --card: #020617;
+      --border: #1e293b;
+      --text: #e5e7eb;
+      --muted: #9ca3af;
+      --accent: #22c55e;
+      --danger: #dc2626;
+      --radius-lg: 12px;
+      --radius-md: 8px;
+      --shadow-soft: 0 18px 40px rgba(15,23,42,0.75);
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: radial-gradient(circle at top, #1d4ed8 0, #020617 45%, #000 100%);
+      color: var(--text);
+    }
+
+    /* ========== LOGIN PAGE ========== */
+
+    #login-section {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .login-box {
+      width: 94%;
+      max-width: 380px;
+      padding: 28px 24px 24px;
+      background: rgba(15,23,42,0.92);
+      border-radius: 18px;
+      box-shadow: var(--shadow-soft);
+      border: 1px solid rgba(148,163,184,0.3);
+      backdrop-filter: blur(18px);
+      animation: fadeIn 0.4s ease-out;
+    }
+    .login-header {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 16px;
+    }
+    .login-header-logo {
+      width: 40px;
+      height: 40px;
+      border-radius: 999px;
+      background: radial-gradient(circle at 30% 0, #38bdf8, #1d4ed8);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 800;
+      color: white;
+      font-size: 20px;
+    }
+    .login-header-text {
+      display: flex;
+      flex-direction: column;
+    }
+    .login-header-text span:first-child {
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: var(--muted);
+    }
+    .login-header-text span:last-child {
+      font-size: 18px;
+      font-weight: 600;
+    }
+
+    .login-box h2 {
+      margin: 8px 0 4px;
+      font-size: 20px;
+      font-weight: 600;
+    }
+    .login-subtitle {
+      font-size: 13px;
+      color: var(--muted);
+      margin-bottom: 18px;
+    }
+
+    .login-box label {
+      display: block;
+      font-size: 13px;
+      margin-bottom: 4px;
+      color: var(--muted);
+    }
+    .login-box input {
+      width: 100%;
+      padding: 10px 11px;
+      border-radius: 9px;
+      border: 1px solid rgba(148,163,184,0.6);
+      background: rgba(15,23,42,0.8);
+      color: var(--text);
+      font-size: 14px;
+      outline: none;
+      transition: border-color 0.18s ease, box-shadow 0.18s ease, background 0.18s ease;
+      margin-bottom: 12px;
+    }
+    .login-box input:focus {
+      border-color: #38bdf8;
+      box-shadow: 0 0 0 1px rgba(56,189,248,0.6);
+      background: rgba(15,23,42,0.95);
+    }
+    .login-box button {
+      width: 100%;
+      padding: 10px 11px;
+      border-radius: 999px;
+      border: none;
+      background: linear-gradient(135deg, #22c55e, #16a34a);
+      color: white;
+      font-size: 14px;
+      font-weight: 600;
+      cursor: pointer;
+      margin-top: 4px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+      box-shadow: 0 12px 30px rgba(34,197,94,0.45);
+      transition: transform 0.16s ease, box-shadow 0.16s ease, filter 0.16s ease;
+    }
+    .login-box button:hover {
+      transform: translateY(-1px);
+      filter: brightness(1.05);
+      box-shadow: 0 16px 40px rgba(34,197,94,0.6);
+    }
+    .icon-login {
+      width: 14px;
+      height: 14px;
+      border-radius: 3px;
+      border: 2px solid white;
+      border-bottom-width: 3px;
+      display: inline-block;
+      margin-right: 4px;
+    }
+    .error {
+      color: #fecaca;
+      background: rgba(248,113,113,0.07);
+      border: 1px solid rgba(248,113,113,0.5);
+      padding: 8px 10px;
+      border-radius: 8px;
+      font-size: 13px;
+      margin-bottom: 10px;
+    }
+    .login-footer {
+      margin-top: 10px;
+      font-size: 11px;
+      color: var(--muted);
+      text-align: center;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(10px) scale(0.98); }
+      to   { opacity: 1; transform: translateY(0) scale(1); }
+    }
+    @media (max-width: 480px) {
+      .login-box {
+        margin: 40px 12px;
+        padding: 22px 18px 20px;
+      }
+      .login-header-logo {
+        width: 34px;
+        height: 34px;
+        font-size: 18px;
+      }
+    }
+
+    /* ========== APP SHELL ========== */
+
+    #app-section {
+      display: none; /* hidden until login */
+    }
+
+    .app-shell {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    /* NAVBAR */
+    .navbar {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      background: rgba(15,23,42,0.98);
+      backdrop-filter: blur(14px);
+      padding: 10px 18px;
+      border-bottom: 1px solid rgba(30,64,175,0.6);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .nav-left {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .nav-logo {
+      height: 34px;
+      width: auto;
+      border-radius: 999px;
+      background: #020617;
+      padding: 2px 6px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .nav-title {
+      display: flex;
+      flex-direction: column;
+    }
+    .nav-title span:first-child {
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      color: var(--muted);
+    }
+    .nav-title span:last-child {
+      font-size: 16px;
+      font-weight: 600;
+    }
+    .nav-right {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 12px;
+      color: var(--muted);
+    }
+    .badge-live {
+      padding: 3px 8px;
+      border-radius: 999px;
+      font-size: 11px;
+      background: rgba(34,197,94,0.12);
+      color: #4ade80;
+      border: 1px solid rgba(34,197,94,0.6);
+    }
+    /* blinking live dot */
+    @keyframes blinkDot {
+      0%   { opacity: 1; transform: scale(1); }
+      50%  { opacity: 0.2; transform: scale(0.7); }
+      100% { opacity: 1; transform: scale(1); }
+    }
+    .badge-live .dot {
+      width: 7px;
+      height: 7px;
+      background: #4ade80;
+      border-radius: 50%;
+      display: inline-block;
+      margin-right: 5px;
+      animation: blinkDot 1.2s infinite ease-in-out;
+    }
+    .logout {
+      color: #fecaca;
+      background: rgba(248,113,113,0.16);
+      padding: 6px 12px;
+      border-radius: 999px;
+      text-decoration: none;
+      border: 1px solid rgba(248,113,113,0.6);
+      font-size: 12px;
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      cursor: pointer;
+    }
+    .logout:hover {
+      background: rgba(248,113,113,0.28);
+    }
+
+    /* MAIN LAYOUT */
+    .main {
+      width: 90%;
+      max-width: 1400px;
+      margin: 18px auto 26px;
+      padding: 0 14px 20px;
+    }
+
+    /* Summary row */
+    .summary-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-bottom: 12px;
+      font-size: 13px;
+      color: var(--muted);
+    }
+    .summary-pill {
+      padding: 6px 10px;
+      border-radius: 999px;
+      border: 1px solid rgba(148,163,184,0.35);
+      background: rgba(15,23,42,0.9);
+    }
+
+    /* Controls card */
+    .controls-card {
+      background: rgba(15,23,42,0.96);
+      border-radius: var(--radius-lg);
+      padding: 12px 14px;
+      box-shadow: var(--shadow-soft);
+      border: 1px solid rgba(30,64,175,0.7);
+      margin-bottom: 14px;
+    }
+    .controls-inner {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .controls-left, .controls-right {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      align-items: center;
+      font-size: 13px;
+    }
+    .label {
+      color: var(--muted);
+      font-size: 12px;
+    }
+    select, input[type="date"] {
+      padding: 6px 9px;
+      border-radius: 8px;
+      border: 1px solid rgba(148,163,184,0.6);
+      background: #020617;
+      color: var(--text);
+      font-size: 13px;
+    }
+    select:focus, input[type="date"]:focus {
+      outline: none;
+      border-color: #38bdf8;
+      box-shadow: 0 0 0 1px rgba(56,189,248,0.5);
+    }
+    input[type="date"] {
+      color: #ffffff !important;
+      border: 1px solid rgba(255,255,255,0.35) !important;
+    }
+    input[type="date"]::-webkit-datetime-edit {
+      color: #ffffff !important;
+    }
+    input[type="date"]::-webkit-calendar-picker-indicator {
+      filter: invert(1) brightness(1.3);
+      cursor: pointer;
+    }
+
+    .btn {
+      border-radius: 999px;
+      padding: 6px 12px;
+      border: none;
+      cursor: pointer;
+      font-size: 13px;
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      text-decoration: none;
+      transition: transform 0.12s ease, box-shadow 0.12s ease, filter 0.12s ease;
+    }
+    .btn-primary {
+      background: linear-gradient(135deg, #2563eb, #1d4ed8);
+      color: white;
+      box-shadow: 0 10px 28px rgba(37,99,235,0.5);
+      border: 1px solid rgba(59,130,246,0.8);
+    }
+    .btn-primary:hover {
+      transform: translateY(-1px);
+      filter: brightness(1.03);
+    }
+    .btn-secondary {
+      background: rgba(15,23,42,0.9);
+      color: var(--muted);
+      border: 1px solid rgba(148,163,184,0.6);
+    }
+    .btn-danger {
+      background: rgba(248,113,113,0.08);
+      color: #fecaca;
+      border: 1px solid rgba(248,113,113,0.6);
+    }
+
+    /* Add Entry card */
+    .add-card {
+      background: rgba(15,23,42,0.96);
+      border-radius: var(--radius-lg);
+      padding: 10px 14px 14px;
+      box-shadow: var(--shadow-soft);
+      border: 1px solid rgba(30,64,175,0.7);
+      margin-bottom: 14px;
+    }
+    .add-card-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 8px;
+      font-size: 13px;
+      color: var(--muted);
+    }
+    .add-card-form {
+      display: none;
+      margin-top: 8px;
+    }
+    .add-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+    .add-grid > div {
+      flex: 1 1 180px;
+    }
+    .add-card input, .add-card select {
+      width: 100%;
+      padding: 7px 9px;
+      border-radius: 8px;
+      border: 1px solid rgba(148,163,184,0.6);
+      background: #020617;
+      color: var(--text);
+      font-size: 13px;
+    }
+    .add-card label {
+      display: block;
+      font-size: 12px;
+      color: var(--muted);
+      margin-bottom: 2px;
+    }
+
+    /* Export */
+    .export-wrapper {
+      text-align: right;
+      margin: 8px 2px 6px;
+    }
+    .export-btn {
+      border-radius: 999px;
+      padding: 7px 13px;
+      background: linear-gradient(135deg,#22c55e,#16a34a);
+      color: white;
+      text-decoration: none;
+      font-size: 13px;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      box-shadow: 0 10px 26px rgba(22,163,74,0.55);
+      cursor: pointer;
+    }
+    .export-btn:hover {
+      filter: brightness(1.04);
+      transform: translateY(-1px);
+    }
+    .icon-download {
+      width: 0px;
+      height: 0px;
+      border-left: 6px solid transparent;
+      border-right: 6px solid transparent;
+      border-top: 8px solid white;
+      display: inline-block;
+      margin-right: 4px;
+    }
+
+    /* Table */
+    .table-card {
+      background: rgba(15,23,42,0.96);
+      border-radius: var(--radius-lg);
+      border: 1px solid rgba(30,64,175,0.7);
+      box-shadow: var(--shadow-soft);
+      overflow: hidden;
+    }
+    .table-container {
+      width: 100%;
+      overflow-x: auto;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 15px;
+      min-width: 600px;
+    }
+    thead {
+      background: radial-gradient(circle at top, rgba(59,130,246,0.6), #0b1120);
+    }
+    th, td {
+      padding: 8px 10px;
+      border-bottom: 1px solid rgba(30,64,175,0.5);
+    }
+    th {
+      text-align: left;
+      font-weight: 600;
+      font-size: 15px;
+      color: #e5edff;
+      white-space: nowrap;
+    }
+    tbody tr:nth-child(even) {
+      background: rgba(15,23,42,0.9);
+    }
+    tbody tr:nth-child(odd) {
+      background: #020617;
+    }
+    tbody tr:hover {
+      background: rgba(30,64,175,0.7);
+    }
+
+    /* Pagination */
+    .pagination {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px 14px;
+      font-size: 12px;
+      color: var(--muted);
+    }
+    .pagination-controls {
+      display: flex;
+      gap: 6px;
+      align-items: center;
+    }
+    .page-btn {
+      padding: 6px 10px;
+      border-radius: 999px;
+      border: 1px solid rgba(148,163,184,0.5);
+      background: #020617;
+      color: var(--text);
+      text-decoration: none;
+      font-size: 12px;
+      cursor: pointer;
+    }
+    .page-btn:hover {
+      background: rgba(37,99,235,0.16);
+    }
+    .page-current {
+      padding: 6px 12px;
+      border-radius: 999px;
+      background: rgba(37,99,235,0.8);
+      color: white;
+    }
+
+    .bottom-size {
+      margin-top: 8px;
+      text-align: right;
+      font-size: 12px;
+      color: var(--muted);
+    }
+
+    /* Responsive */
+    @media (max-width: 1024px) {
+      .main {
+        max-width: 100%;
+        padding: 0 10px 18px;
+      }
+      .controls-card {
+        padding: 10px 10px;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .navbar {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 6px;
+      }
+      .nav-right {
+        align-self: stretch;
+        justify-content: space-between;
+      }
+      .main {
+        margin-top: 12px;
+      }
+      .summary-row {
+        flex-direction: column;
+      }
+      .controls-inner {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 14px;
+      }
+      .controls-left,
+      .controls-right {
+        width: 100%;
+        justify-content: space-between;
+      }
+      .controls-right {
+        justify-content: flex-end;
+      }
+      table {
+        font-size: 12px;
+      }
+      th, td {
+        padding: 6px 8px;
+        font-size: 12px;
+      }
+    }
+
+    @media (max-width: 540px) {
+      .navbar {
+        padding: 8px 10px;
+      }
+      .nav-left {
+        width: 100%;
+        justify-content: space-between;
+      }
+      .main {
+        padding: 0 8px 16px;
+      }
+      .controls-left {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 10px;
+      }
+      .controls-right {
+        justify-content: center;
+      }
+      .export-btn {
+        width: 100%;
+        justify-content: center;
+      }
+      .pagination {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 6px;
+      }
+      .bottom-size {
+        text-align: left;
+        padding-left: 4px;
+      }
+      .add-grid > div {
+        flex: 1 1 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ========== LOGIN SECTION ========== -->
+<section id="login-section">
+  <div class="login-box">
+    <div class="login-header">
+      <div class="login-header-logo">V</div>
+      <div class="login-header-text">
+        <span>Admin Access</span>
+        <span>Entries Dashboard</span>
+      </div>
+    </div>
+
+    <h2>Sign in</h2>
+    <div class="login-subtitle">
+      Use your internal admin credentials to view form submissions.
+      <br><small>(Demo: <b>admin / 12345</b>)</small>
+    </div>
+
+    <div id="login-error" class="error" style="display:none;"></div>
+
+    <form id="login-form">
+      <label>Username</label>
+      <input type="text" id="login-username" required autocomplete="off">
+
+      <label>Password</label>
+      <input type="password" id="login-password" required>
+
+      <button type="submit">
+        <span class="icon-login"></span>
+        <span>Login to Dashboard</span>
+      </button>
+    </form>
+
+    <div class="login-footer">
+      Local demo &mdash; powered by JavaScript &amp; localStorage
+    </div>
+  </div>
+</section>
+
+<!-- ========== APP SECTION ========== -->
+<section id="app-section">
+  <div class="app-shell">
+
+    <!-- NAVBAR -->
+    <header class="navbar">
+      <div class="nav-left">
+        <div class="nav-logo">
+          <!-- Placeholder logo, you can change the src -->
+          <span style="font-weight:700;color:#e5e7eb;">V</span>
+        </div>
+        <div class="nav-title">
+          <span>Internal dashboard</span>
+          <span>Website Entries Monitor</span>
+        </div>
+      </div>
+      <div class="nav-right">
+        <span class="badge-live"><span class="dot"></span> Live</span>
+        <button class="logout" id="logout-btn">Logout</button>
+      </div>
+    </header>
+
+    <main class="main">
+      <!-- Summary row -->
+      <div class="summary-row">
+        <div class="summary-pill">
+          Total records: <strong id="summary-total">0</strong>
+        </div>
+        <div class="summary-pill">
+          Page size: <strong id="summary-size">15</strong>
+        </div>
+        <div class="summary-pill" id="summary-filter" style="display:none;">
+          Filter: <span id="summary-filter-text"></span>
+        </div>
+      </div>
+
+      <!-- Controls Card -->
+      <section class="controls-card">
+        <div class="controls-inner">
+          <!-- LEFT: page size + date filters -->
+          <div class="controls-left">
+            <div>
+              <span class="label">Page size</span><br>
+              <select id="page-size-select-top">
+                <option value="15">15</option>
+                <option value="25">25</option>
+                <option value="50">50</option>
+                <option value="75">75</option>
+                <option value="100">100</option>
+              </select>
+            </div>
+
+            <form id="filter-form" style="display:flex; gap:8px; flex-wrap:wrap; align-items:flex-end;">
+              <div>
+                <span class="label">From</span><br>
+                <input type="date" id="filter-from">
+              </div>
+              <div>
+                <span class="label">To</span><br>
+                <input type="date" id="filter-to">
+              </div>
+              <div>
+                <button class="btn btn-primary" type="submit">
+                  <span>Apply filter</span>
+                </button>
+              </div>
+              <div>
+                <button class="btn btn-secondary" type="button" id="clear-filter-btn">
+                  Clear
+                </button>
+              </div>
+            </form>
+          </div>
+
+          <!-- RIGHT: export -->
+          <div class="controls-right">
+            <button class="btn btn-primary" id="export-btn">
+              <span class="icon-download"></span>
+              <span>Export all</span>
+            </button>
+          </div>
+        </div>
+      </section>
+
+      <!-- Add New Entry Card -->
+      <section class="add-card">
+        <div class="add-card-header">
+          <div style="font-size:13px;color:var(--muted);">
+            <strong>Add New Entry</strong> &nbsp;&middot;&nbsp; For testing localStorage
+          </div>
+          <button class="btn btn-secondary" type="button" id="toggle-add-form-btn">
+            Show form
+          </button>
+        </div>
+        <form id="add-entry-form" class="add-card-form">
+          <div class="add-grid">
+            <div>
+              <label>Name</label>
+              <input type="text" id="add-name" required>
+            </div>
+            <div>
+              <label>Email</label>
+              <input type="email" id="add-email" required>
+            </div>
+            <div>
+              <label>Mobile Number</label>
+              <input type="tel" id="add-phone" required>
+            </div>
+            <div>
+              <label>Course</label>
+              <select id="add-course">
+                <option value="Java Full Stack">Java Full Stack</option>
+                <option value="Python Full Stack">Python Full Stack</option>
+                <option value="MERN Stack">MERN Stack</option>
+                <option value="Testing">Testing</option>
+                <option value="Other">Other</option>
+              </select>
+            </div>
+            <div>
+              <label>Other, please specify</label>
+              <input type="text" id="add-other" placeholder="Optional">
+            </div>
+          </div>
+          <div style="margin-top:10px; text-align:right;">
+            <button class="btn btn-primary" type="submit">Save Entry</button>
+          </div>
+        </form>
+      </section>
+
+      <!-- Export hint -->
+      <div class="export-wrapper">
+        <span style="font-size:11px;color:var(--muted);margin-right:8px;">
+          Export will include <strong>all filtered records</strong> (ignores pagination).
+        </span>
+      </div>
+
+      <!-- Table -->
+      <section class="table-card">
+        <div class="table-container">
+          <table>
+            <thead>
+              <tr>
+                <th>Sl No</th>
+                <th>Date</th>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Mobile Number</th>
+                <th>Course</th>
+                <th>Other, please specify</th>
+              </tr>
+            </thead>
+            <tbody id="table-body">
+              <!-- rows injected by JS -->
+            </tbody>
+          </table>
+        </div>
+
+        <!-- Pagination -->
+        <div class="pagination">
+          <div id="pagination-info">Showing page 1 of 1</div>
+          <div class="pagination-controls">
+            <button class="page-btn" id="prev-page-btn">&larr; Prev</button>
+            <span class="page-current" id="page-current">1</span>
+            <button class="page-btn" id="next-page-btn">Next &rarr;</button>
+          </div>
+        </div>
+      </section>
+
+      <!-- Bottom page size selector -->
+      <div class="bottom-size">
+        Page size:
+        <select id="page-size-select-bottom">
+          <option value="15">15</option>
+          <option value="25">25</option>
+          <option value="50">50</option>
+          <option value="75">75</option>
+          <option value="100">100</option>
+        </select>
+      </div>
+    </main>
+  </div>
+</section>
+
+<script>
+  // ---------- SIMPLE AUTH ----------
+  const USERNAME = "admin";
+  const PASSWORD = "12345";
+
+  const loginSection = document.getElementById("login-section");
+  const appSection   = document.getElementById("app-section");
+  const loginForm    = document.getElementById("login-form");
+  const loginError   = document.getElementById("login-error");
+  const logoutBtn    = document.getElementById("logout-btn");
+
+  function showApp() {
+    loginSection.style.display = "none";
+    appSection.style.display   = "block";
+  }
+
+  function showLogin() {
+    loginSection.style.display = "flex";
+    appSection.style.display   = "none";
+  }
+
+  // Check session login
+  if (sessionStorage.getItem("entriesLoggedIn") === "true") {
+    showApp();
+  }
+
+  loginForm.addEventListener("submit", function (e) {
+    e.preventDefault();
+    const u = document.getElementById("login-username").value.trim();
+    const p = document.getElementById("login-password").value.trim();
+
+    if (u === USERNAME && p === PASSWORD) {
+      sessionStorage.setItem("entriesLoggedIn", "true");
+      loginError.style.display = "none";
+      showApp();
+    } else {
+      loginError.textContent = "Invalid username or password";
+      loginError.style.display = "block";
+    }
+  });
+
+  logoutBtn.addEventListener("click", function () {
+    sessionStorage.removeItem("entriesLoggedIn");
+    showLogin();
+  });
+
+  // ---------- DATA & TABLE LOGIC ----------
+
+  const STORAGE_KEY = "vinay'sEntriesDemo";
+
+  let entries = [];
+  let filteredEntries = [];
+  let currentPage = 1;
+  let pageSize = 15;
+  let filterFrom = "";
+  let filterTo   = "";
+
+  const tableBody          = document.getElementById("table-body");
+  const summaryTotal       = document.getElementById("summary-total");
+  const summarySize        = document.getElementById("summary-size");
+  const summaryFilter      = document.getElementById("summary-filter");
+  const summaryFilterText  = document.getElementById("summary-filter-text");
+  const pageSizeTop        = document.getElementById("page-size-select-top");
+  const pageSizeBottom     = document.getElementById("page-size-select-bottom");
+  const paginationInfo     = document.getElementById("pagination-info");
+  const pageCurrent        = document.getElementById("page-current");
+  const prevPageBtn        = document.getElementById("prev-page-btn");
+  const nextPageBtn        = document.getElementById("next-page-btn");
+  const filterForm         = document.getElementById("filter-form");
+  const filterFromInput    = document.getElementById("filter-from");
+  const filterToInput      = document.getElementById("filter-to");
+  const clearFilterBtn     = document.getElementById("clear-filter-btn");
+  const exportBtn          = document.getElementById("export-btn");
+  const toggleAddFormBtn   = document.getElementById("toggle-add-form-btn");
+  const addEntryForm       = document.getElementById("add-entry-form");
+
+  // Add entry fields
+  const addNameInput   = document.getElementById("add-name");
+  const addEmailInput  = document.getElementById("add-email");
+  const addPhoneInput  = document.getElementById("add-phone");
+  const addCourseInput = document.getElementById("add-course");
+  const addOtherInput  = document.getElementById("add-other");
+
+  function formatDate(dateObj) {
+    // Format: YYYY-MM-DD HH:mm:ss
+    const pad = n => n.toString().padStart(2, "0");
+    const y = dateObj.getFullYear();
+    const m = pad(dateObj.getMonth() + 1);
+    const d = pad(dateObj.getDate());
+    const hh = pad(dateObj.getHours());
+    const mm = pad(dateObj.getMinutes());
+    const ss = pad(dateObj.getSeconds());
+    return `${y}-${m}-${d} ${hh}:${mm}:${ss}`;
+  }
+
+  function generateSampleEntries() {
+    const courses = [
+      "Java Full Stack",
+      "Python Full Stack",
+      "MERN Stack",
+      "Testing",
+      "Data Science"
+    ];
+    const sample = [];
+    const now = new Date();
+
+    for (let i = 0; i < 50; i++) {
+      const date = new Date(now.getTime() - i * 86400000); // each day back
+      sample.push({
+        id: i + 1,
+        date: formatDate(date),
+        name: `Sample User ${i + 1}`,
+        email: `user${i + 1}@example.com`,
+        phone: `9000000${(100 + i).toString().slice(-3)}`,
+        course: courses[i % courses.length],
+        other: i % 5 === 0 ? "Referred by friend" : ""
+      });
+    }
+    return sample;
+  }
+
+  function loadEntries() {
+    const raw = localStorage.getItem(STORAGE_KEY);
+    if (!raw) {
+      entries = generateSampleEntries();
+      saveEntries();
+    } else {
+      try {
+        entries = JSON.parse(raw);
+      } catch (e) {
+        console.error("Error parsing stored entries, regenerating sample.", e);
+        entries = generateSampleEntries();
+        saveEntries();
+      }
+    }
+  }
+
+  function saveEntries() {
+    localStorage.setItem(STORAGE_KEY, JSON.stringify(entries));
+  }
+
+  function applyFilters() {
+    filterFrom = filterFromInput.value || "";
+    filterTo   = filterToInput.value || "";
+
+    filteredEntries = entries.filter(entry => {
+      const dateOnly = entry.date.slice(0,10); // YYYY-MM-DD
+      if (filterFrom && dateOnly < filterFrom) return false;
+      if (filterTo && dateOnly > filterTo)     return false;
+      return true;
+    });
+
+    if (filterFrom || filterTo) {
+      summaryFilter.style.display = "inline-flex";
+      if (filterFrom && filterTo) {
+        summaryFilterText.textContent = `From ${filterFrom} to ${filterTo}`;
+      } else if (filterFrom) {
+        summaryFilterText.textContent = `From ${filterFrom}`;
+      } else if (filterTo) {
+        summaryFilterText.textContent = `Up to ${filterTo}`;
+      }
+    } else {
+      summaryFilter.style.display = "none";
+      summaryFilterText.textContent = "";
+    }
+
+    currentPage = 1;
+    renderTable();
+  }
+
+  function renderTable() {
+    const total = filteredEntries.length;
+    summaryTotal.textContent = total.toString();
+    summarySize.textContent  = pageSize.toString();
+
+    const totalPages = total === 0 ? 1 : Math.ceil(total / pageSize);
+    if (currentPage > totalPages) currentPage = totalPages;
+
+    const startIndex = (currentPage - 1) * pageSize;
+    const endIndex   = Math.min(startIndex + pageSize, total);
+    const pageItems  = filteredEntries.slice(startIndex, endIndex);
+
+    tableBody.innerHTML = "";
+
+    if (pageItems.length === 0) {
+      const tr = document.createElement("tr");
+      const td = document.createElement("td");
+      td.colSpan = 7;
+      td.textContent = "No entries found.";
+      td.style.textAlign = "center";
+      tableBody.appendChild(tr);
+      tr.appendChild(td);
+    } else {
+      pageItems.forEach((entry, idx) => {
+        const tr = document.createElement("tr");
+
+        const slTd     = document.createElement("td");
+        const dateTd   = document.createElement("td");
+        const nameTd   = document.createElement("td");
+        const emailTd  = document.createElement("td");
+        const phoneTd  = document.createElement("td");
+        const courseTd = document.createElement("td");
+        const otherTd  = document.createElement("td");
+
+        const slNo = startIndex + idx + 1;
+        slTd.textContent   = slNo;
+        dateTd.textContent = entry.date;
+        nameTd.textContent = entry.name;
+        emailTd.textContent = entry.email;
+        phoneTd.textContent = entry.phone;
+        courseTd.textContent = entry.course;
+        otherTd.textContent  = entry.other || "";
+
+        tr.appendChild(slTd);
+        tr.appendChild(dateTd);
+        tr.appendChild(nameTd);
+        tr.appendChild(emailTd);
+        tr.appendChild(phoneTd);
+        tr.appendChild(courseTd);
+        tr.appendChild(otherTd);
+
+        tableBody.appendChild(tr);
+      });
+    }
+
+    paginationInfo.textContent = `Showing page ${currentPage} of ${totalPages}`;
+    pageCurrent.textContent    = currentPage.toString();
+
+    prevPageBtn.disabled = currentPage <= 1;
+    nextPageBtn.disabled = currentPage >= totalPages;
+  }
+
+  // Change page size (top & bottom synced)
+  function setPageSize(size) {
+    pageSize = parseInt(size, 10);
+    pageSizeTop.value    = size;
+    pageSizeBottom.value = size;
+    currentPage = 1;
+    renderTable();
+  }
+
+  // ---------- EVENTS ----------
+
+  document.addEventListener("DOMContentLoaded", function () {
+    loadEntries();
+    filteredEntries = [...entries];
+    renderTable();
+
+    // init page size selects
+    pageSizeTop.value = pageSize.toString();
+    pageSizeBottom.value = pageSize.toString();
+  });
+
+  pageSizeTop.addEventListener("change", e => setPageSize(e.target.value));
+  pageSizeBottom.addEventListener("change", e => setPageSize(e.target.value));
+
+  prevPageBtn.addEventListener("click", () => {
+    if (currentPage > 1) {
+      currentPage--;
+      renderTable();
+    }
+  });
+
+  nextPageBtn.addEventListener("click", () => {
+    const totalPages = filteredEntries.length === 0 ? 1 : Math.ceil(filteredEntries.length / pageSize);
+    if (currentPage < totalPages) {
+      currentPage++;
+      renderTable();
+    }
+  });
+
+  filterForm.addEventListener("submit", function (e) {
+    e.preventDefault();
+    applyFilters();
+  });
+
+  clearFilterBtn.addEventListener("click", function () {
+    filterFromInput.value = "";
+    filterToInput.value   = "";
+    applyFilters();
+  });
+
+  // Toggle Add Entry form
+  toggleAddFormBtn.addEventListener("click", function () {
+    const isVisible = addEntryForm.style.display === "block";
+    addEntryForm.style.display = isVisible ? "none" : "block";
+    toggleAddFormBtn.textContent = isVisible ? "Show form" : "Hide form";
+  });
+
+  // Add New Entry
+  addEntryForm.addEventListener("submit", function (e) {
+    e.preventDefault();
+
+    const name   = addNameInput.value.trim();
+    const email  = addEmailInput.value.trim();
+    const phone  = addPhoneInput.value.trim();
+    const course = addCourseInput.value;
+    const other  = addOtherInput.value.trim();
+
+    if (!name || !email || !phone) {
+      alert("Please fill Name, Email, and Mobile Number.");
+      return;
+    }
+
+    const now = new Date();
+    const newEntry = {
+      id: entries.length ? (Math.max(...entries.map(x => x.id)) + 1) : 1,
+      date: formatDate(now),
+      name,
+      email,
+      phone,
+      course,
+      other
+    };
+
+    entries.unshift(newEntry); // latest on top
+    saveEntries();
+
+    applyFilters(); // re-apply filters, which re-renders table
+
+    addEntryForm.reset();
+    alert("Entry added (saved in localStorage).");
+  });
+
+  // Export ALL filtered rows to Excel
+  exportBtn.addEventListener("click", function () {
+    if (filteredEntries.length === 0) {
+      alert("No data to export.");
+      return;
+    }
+
+    const header = [
+      "Sl No",
+      "Date",
+      "Name",
+      "Email",
+      "Mobile Number",
+      "Course",
+      "Other, please specify"
+    ];
+
+    const data = [header];
+
+    filteredEntries.forEach((entry, index) => {
+      data.push([
+        index + 1,
+        entry.date,
+        entry.name,
+        entry.email,
+        entry.phone,
+        entry.course,
+        entry.other || ""
+      ]);
+    });
+
+    const ws = XLSX.utils.aoa_to_sheet(data);
+    const wb = XLSX.utils.book_new();
+    XLSX.utils.book_append_sheet(wb, ws, "Entries");
+
+    XLSX.writeFile(wb, "VTech_Entries_Demo.xlsx");
+  });
+</script>
+
+</body>
+</html>
